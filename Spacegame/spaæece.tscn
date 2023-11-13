@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceidb1v0s1485"]
+
+[ext_resource type="Texture2D" uid="uid://b5m1yndwymghi" path="res://sprites/Space Background Funky Futures.png" id="1_hmude"]
+[ext_resource type="Script" path="res://Scripts/space.gd" id="1_wy7ji"]
+[ext_resource type="PackedScene" uid="uid://cl5cc6co7pks7" path="res://Spacegame/mainship.tscn" id="3_c1xe6"]
+[ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scripts/planet.tscn" id="3_h48js"]
+[ext_resource type="Script" path="res://Scripts/Mainshipgravity.gd" id="4_70all"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bee40"]
+size = Vector2(58.9649, 2064.75)
+
+[node name="Spaæece" type="Node2D"]
+script = ExtResource("1_wy7ji")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1000, 1000)
+texture = ExtResource("1_hmude")
+
+[node name="Edge of space" type="RigidBody2D" parent="."]
+position = Vector2(1000, -1)
+rotation = 1.5708
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(2012, -0.250061)
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(1003, 1011)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(1002, -1011)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(-18.5137, 32.6251)
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="planets" type="Node2D" parent="."]
+
+[node name="Planet" parent="planets" groups=["planets"] instance=ExtResource("3_h48js")]
+position = Vector2(792, 680)
+
+[node name="Planet2" parent="planets" groups=["planets"] instance=ExtResource("3_h48js")]
+position = Vector2(1037, 721)
+
+[node name="JW" parent="planets" groups=["planets"] instance=ExtResource("3_h48js")]
+position = Vector2(940, 613)
+
+[node name="Mainshipgravity" type="RigidBody2D" parent="planets" groups=["planets"]]
+position = Vector2(940, 766)
+mass = 100.0
+gravity_scale = 0.0
+script = ExtResource("4_70all")
+
+[node name="mainship" parent="planets/Mainshipgravity" instance=ExtResource("3_c1xe6")]

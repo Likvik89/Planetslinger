@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b7o8ugf8ive5o"]
+
+[node name="planet" type="RigidBody2D"]
