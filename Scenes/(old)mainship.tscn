@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cl5cc6co7pks7"]
 
 [ext_resource type="Script" path="res://Scripts/(old)mainship.gd" id="1_4x8f3"]
-[ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/ship-0.png" id="2_dtjc0"]
+[ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/SpaceShips/ship-0.png" id="2_dtjc0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8utc3"]
 radius = 6.0

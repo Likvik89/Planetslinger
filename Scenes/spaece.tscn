@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ceidb1v0s1485"]
 
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
-[ext_resource type="Texture2D" uid="uid://b5m1yndwymghi" path="res://sprites/Space Background Funky Futures.png" id="2_yqhgi"]
+[ext_resource type="Texture2D" uid="uid://b5m1yndwymghi" path="res://sprites/Backgrounds/Space Background Funky Futures.png" id="2_jaqwq"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 
@@ -13,7 +13,7 @@ script = ExtResource("1_8xrhg")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(1000, 1000)
-texture = ExtResource("2_yqhgi")
+texture = ExtResource("2_jaqwq")
 
 [node name="Edge of space" type="RigidBody2D" parent="."]
 position = Vector2(1000, -1)

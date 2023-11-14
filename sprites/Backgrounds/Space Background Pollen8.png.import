@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmp5mjfuvc7c1"
-path="res://.godot/imported/ship-0.png-5042ede23c285df0cbf697bfccb43d15.ctex"
+uid="uid://bxq85bk0fbm1v"
+path="res://.godot/imported/Space Background Pollen8.png-855c0436d3debdbf9c52158f31a5f45b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/ship-0.png"
-dest_files=["res://.godot/imported/ship-0.png-5042ede23c285df0cbf697bfccb43d15.ctex"]
+source_file="res://sprites/Backgrounds/Space Background Pollen8.png"
+dest_files=["res://.godot/imported/Space Background Pollen8.png-855c0436d3debdbf9c52158f31a5f45b.ctex"]
 
 [params]
 

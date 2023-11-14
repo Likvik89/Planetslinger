@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5m1yndwymghi"
-path="res://.godot/imported/Space Background Funky Futures.png-e9f3e9b2d4584142ca318f49a27fd5e1.ctex"
+uid="uid://ri880w60avyb"
+path="res://.godot/imported/GreyYellowOblongSS.png-2754f89a24e8eba1e7c747b2b7fa3699.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Space Background Funky Futures.png"
-dest_files=["res://.godot/imported/Space Background Funky Futures.png-e9f3e9b2d4584142ca318f49a27fd5e1.ctex"]
+source_file="res://sprites/SpaceShips/GreyYellowOblongSS.png"
+dest_files=["res://.godot/imported/GreyYellowOblongSS.png-2754f89a24e8eba1e7c747b2b7fa3699.ctex"]
 
 [params]
 
