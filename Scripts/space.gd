@@ -1,7 +1,7 @@
 extends Node2D
 
 
-func calculate_gravity_force():
+func x_ready():
 	var sum := Vector2.ZERO
 	for target in $bodies.get_children():
 		for body in $bodies.get_children():

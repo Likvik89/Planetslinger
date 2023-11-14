@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://cl5cc6co7pks7"]
 
-[ext_resource type="Script" path="res://Scripts/mainship.gd" id="1_l41o4"]
-[ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/ship-0.png" id="1_pkm5y"]
+[ext_resource type="Script" path="res://Scripts/(old)mainship.gd" id="1_4x8f3"]
+[ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/ship-0.png" id="2_dtjc0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8utc3"]
 radius = 6.0
 
 [node name="mainship" type="CharacterBody2D"]
-script = ExtResource("1_l41o4")
+script = ExtResource("1_4x8f3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pkm5y")
+texture = ExtResource("2_dtjc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

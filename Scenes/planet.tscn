@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://d166e7r2yvule"]
+
+[ext_resource type="Script" path="res://Scripts/planet.gd" id="1_75xrk"]
+[ext_resource type="Texture2D" uid="uid://c4hjwmhqnddkj" path="res://sprites/Planet1.png" id="1_n7slu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6qgmy"]
+radius = 50.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhd7o"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"earthlike",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"rock_planet",
+"speed": 5.0
+}]
+
+[node name="Planet" type="RigidBody2D" groups=["planets"]]
+mass = 800.0
+gravity_scale = 0.0
+script = ExtResource("1_75xrk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n7slu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6qgmy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uhd7o")
+animation = &"earthlike"

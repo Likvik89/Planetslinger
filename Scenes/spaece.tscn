@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceidb1v0s1485"]
+
+[ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
+[ext_resource type="Texture2D" uid="uid://b5m1yndwymghi" path="res://sprites/Space Background Funky Futures.png" id="2_yqhgi"]
+[ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
+[ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bee40"]
+size = Vector2(58.9649, 2064.75)
+
+[node name="Spaæece" type="Node2D"]
+script = ExtResource("1_8xrhg")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1000, 1000)
+texture = ExtResource("2_yqhgi")
+
+[node name="Edge of space" type="RigidBody2D" parent="."]
+position = Vector2(1000, -1)
+rotation = 1.5708
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(2012, -0.250061)
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(1003, 1011)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(1002, -1011)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Edge of space"]
+position = Vector2(-18.5137, 32.6251)
+shape = SubResource("RectangleShape2D_bee40")
+
+[node name="planets" type="Node2D" parent="."]
+
+[node name="Planet" parent="planets" instance=ExtResource("3_1lsuq")]
+position = Vector2(256, 195)
+
+[node name="Planet2" parent="planets" instance=ExtResource("3_1lsuq")]
+position = Vector2(475, 500)
+
+[node name="Planet3" parent="planets" instance=ExtResource("3_1lsuq")]
+position = Vector2(844, 180)
+
+[node name="Playership" parent="planets" instance=ExtResource("4_nh8i3")]
+position = Vector2(529, 322)
