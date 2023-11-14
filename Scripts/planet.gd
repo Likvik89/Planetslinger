@@ -18,4 +18,4 @@ func _integrate_forces(state):
 			var force_magnitude = (G * self.mass * body.mass) / (distance * distance)
 			var direction = (body.global_position - self.global_position).normalized()
 			var force = direction * force_magnitude # combine force magnitude and direction
-			apply_central_force(force) 
+			apply_central_force(force)

@@ -1,7 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=10 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/SpaceShips/ship-0.png" id="1_dva03"]
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
+[ext_resource type="Texture2D" uid="uid://rlru65sdmrxl" path="res://sprites/Exhaust/Exhaust3.png" id="2_5ff5l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0bgr"]
+atlas = ExtResource("2_5ff5l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwmke"]
+atlas = ExtResource("2_5ff5l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4fba"]
+atlas = ExtResource("2_5ff5l")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d764q"]
+atlas = ExtResource("2_5ff5l")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ifhd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0bgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwmke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4fba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d764q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 17.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aq7ew"]
 radius = 6.0
@@ -10,6 +47,13 @@ radius = 6.0
 mass = 700.0
 gravity_scale = 0.0
 script = ExtResource("1_w6fab")
+
+[node name="exhaust" type="AnimatedSprite2D" parent="."]
+position = Vector2(-13, 0)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_4ifhd")
+autoplay = "default"
+frame_progress = 0.277449
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

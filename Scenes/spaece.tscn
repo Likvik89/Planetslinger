@@ -46,5 +46,8 @@ shape = SubResource("RectangleShape2D_bee40")
 [node name="Planet" parent="planets" instance=ExtResource("3_1lsuq")]
 position = Vector2(256, 195)
 
+[node name="Planet2" parent="planets" instance=ExtResource("3_1lsuq")]
+position = Vector2(654, 488)
+
 [node name="Playership" parent="planets" instance=ExtResource("4_nh8i3")]
 position = Vector2(529, 322)
