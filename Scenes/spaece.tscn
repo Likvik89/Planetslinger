@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
 [ext_resource type="Texture2D" uid="uid://b5m1yndwymghi" path="res://sprites/Backgrounds/Space Background Funky Futures.png" id="2_jaqwq"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
-[ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
+[ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Playership.tscn" id="4_nh8i3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bee40"]
 size = Vector2(58.9649, 2064.75)
