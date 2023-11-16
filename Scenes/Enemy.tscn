@@ -3,22 +3,24 @@
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_sthxs"]
 [ext_resource type="Texture2D" uid="uid://dw308gdedt3ck" path="res://sprites/SpaceShips/Tyranidv2.png" id="2_jafmd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_spyv4"]
-radius = 15.0333
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_cap3y"]
-radius = 16.0
+radius = 34.2345
 
-[node name="Enemy" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_spyv4"]
+radius = 17.0294
+
+[node name="Enemy" type="RigidBody2D" groups=["planets"]]
+mass = 450.0
+gravity_scale = 0.0
 script = ExtResource("1_sthxs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jafmd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_spyv4")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_cap3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_spyv4")

@@ -3,9 +3,6 @@ extends RigidBody2D
 @export var G = 1000  # Gravitational constant
 @export var health = 400
 
-func _on_Area2D_body_enter(body):
-	print(str('Body entered: ', body.get_name()))
-
 
 func _integrate_forces(state):
 	var bodies = get_tree().get_nodes_in_group("planets")

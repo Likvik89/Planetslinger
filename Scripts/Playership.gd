@@ -25,7 +25,7 @@ func _integrate_forces(delta):
 	if self.mass > startmass*2:
 		self.mass = startmass*2
 	
-	print(self.mass)
+
 	
 	var bodies = get_tree().get_nodes_in_group("planets")
 	for body in bodies:
@@ -60,5 +60,4 @@ func _integrate_forces(delta):
 	if fuel < 0:
 		fuel = 0
 	
-	print(THRUST_FORCE)
-	print(fuel)
+	
