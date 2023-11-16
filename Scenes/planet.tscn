@@ -4532,4 +4532,4 @@ shape = SubResource("CircleShape2D_6qgmy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_uhd7o")
-animation = &"Gasgiant"
+animation = &"Lavaplanet"
