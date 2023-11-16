@@ -1,13 +1,13 @@
 extends RigidBody2D
 
 @export var G = 1000  # Gravitational constant
-#@onready var anim = $AnimatedSprite2D
+@onready var anim = $AnimatedSprite2D
 
-#func _ready():
-	#var planetSprites = anim.sprite_frames.get_animation_names()
-	#var randomIndex = randi() % planetSprites.size()
-	#var randomPlanet = planetSprites[randomIndex]
-	#anim.play(randomPlanet)
+func _ready():
+	var planetSprites = anim.sprite_frames.get_animation_names()
+	var randomIndex = randi() % planetSprites.size()
+	var randomPlanet = planetSprites[randomIndex]
+	anim.play(randomPlanet)
 
 
 func _integrate_forces(state):
