@@ -11,8 +11,22 @@ const rotationspeed = 250.0
 @export var maxfuel := 200
 var fuel = 200
 
+@export var health = 600
+
+
+	
+func _on_area_2d_body_entered(body):
+	if body.is_in_group('planets'):
+		health -= 2
+	print(health)
+
+
+
+
 
 func _integrate_forces(delta):
+	
+	var force = 2
 	
 	if Input.is_action_just_pressed("gravityup"):
 		self.mass += gravitychange
@@ -32,8 +46,10 @@ func _integrate_forces(delta):
 			var distance = self.global_position.distance_to(body.global_position)
 			var force_magnitude = (G * self.mass * body.mass) / (distance * distance)
 			var direction = (body.global_position - self.global_position).normalized()
-			var force = direction * force_magnitude # combine force magnitude and direction
+			force = direction * force_magnitude # combine force magnitude and direction
 			apply_central_force(force)
+			
+			
 			
 	look_at(get_global_mouse_position())
 	# Apply thrust when moving forward
@@ -58,5 +74,4 @@ func _integrate_forces(delta):
 		fuel = maxfuel
 	if fuel < 0:
 		fuel = 0
-	
-	
+

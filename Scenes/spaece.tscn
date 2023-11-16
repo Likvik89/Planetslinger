@@ -53,5 +53,8 @@ position = Vector2(654, 488)
 [node name="Playership" parent="planets" instance=ExtResource("4_nh8i3")]
 position = Vector2(526, 322)
 
-[node name="Enemy" parent="planets" instance=ExtResource("5_m6m72")]
+[node name="Enemy" parent="planets" node_paths=PackedStringArray("player") instance=ExtResource("5_m6m72")]
 position = Vector2(368, 177)
+freeze = false
+freeze_mode = 0
+player = NodePath("../Playership")

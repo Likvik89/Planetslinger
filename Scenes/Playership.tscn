@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=11 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/SpaceShips/ship-0.png" id="1_dva03"]
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
@@ -43,6 +43,10 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aq7ew"]
 radius = 6.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xa5ig"]
+radius = 7.0
+height = 32.0
+
 [node name="Playership" type="RigidBody2D" groups=["planets"]]
 mass = 700.0
 gravity_scale = 0.0
@@ -69,3 +73,10 @@ limit_top = -100000
 limit_right = 100000
 limit_bottom = 100000
 limit_smoothed = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_xa5ig")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
