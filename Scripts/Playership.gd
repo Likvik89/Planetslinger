@@ -12,7 +12,6 @@ const rotationspeed = 250.0
 var fuel = 200
 
 
-
 func _integrate_forces(delta):
 	
 	if Input.is_action_just_pressed("gravityup"):
