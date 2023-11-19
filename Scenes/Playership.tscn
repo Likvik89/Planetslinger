@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=12 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/SpaceShips/ship-0.png" id="1_dva03"]
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
@@ -44,8 +44,10 @@ animations = [{
 radius = 6.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xa5ig"]
-radius = 7.0
-height = 32.0
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bp53t"]
+radius = 65.0
 
 [node name="Playership" type="RigidBody2D" groups=["planets"]]
 mass = 700.0
@@ -74,9 +76,14 @@ limit_right = 100000
 limit_bottom = 100000
 limit_smoothed = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape2D_xa5ig")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Repulsion field" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Repulsion field"]
+shape = SubResource("CircleShape2D_bp53t")
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_area_2d_body_entered"]
