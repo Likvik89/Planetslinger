@@ -35,7 +35,7 @@ func _integrate_forces(delta):
 	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):
-		if repenergi > maxrepenergi-2:
+		if repenergi == maxrepenergi:
 			for body in $"Repulsion field".get_overlapping_bodies():
 				if body != self:
 					var distance = self.global_position.distance_to(body.global_position)
