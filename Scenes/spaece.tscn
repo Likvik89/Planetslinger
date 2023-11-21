@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 [ext_resource type="PackedScene" uid="uid://cbw8g3l4vl6gq" path="res://Scenes/Enemy.tscn" id="5_m6m72"]
-[ext_resource type="PackedScene" path="res://Scenes/spaece_background.tscn" id="5_worp5"]
+[ext_resource type="PackedScene" uid="uid://dg1hws2hww7rm" path="res://Scenes/spaece_background.tscn" id="5_worp5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ld176"]
 size = Vector2(7003, 502)

@@ -20,14 +20,14 @@ var repenergi = 400
 var repenergirecovery = 1
 
 #Combat variables
-@export var health = 600
+@export var health = 600.0
 
 
 
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('planets') and body != self:
-		health -= body.get_angular_velocity () +  self.get_angular_velocity ()
+		health -= (self.angular_velocity-body.angular_velocity).get_length
 	#print(health)
 
 
@@ -48,7 +48,7 @@ func _integrate_forces(delta):
 		repenergi += repenergirecovery
 		if repenergi > maxrepenergi:
 			repenergi = maxrepenergi
-	print(repenergi)
+	#print(repenergi)
 	
 	
 	
