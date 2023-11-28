@@ -3,13 +3,14 @@ extends RigidBody2D
 @export var G = 1000  # Gravitational constant
 @onready var anim = $AnimatedSprite2D
 
+#Generating a random image for the planet
 func _ready():
 	var planetSprites = anim.sprite_frames.get_animation_names()
 	var randomIndex = randi() % planetSprites.size()
 	var randomPlanet = planetSprites[randomIndex]
 	anim.play(randomPlanet)
 
-
+#Gravity
 func _integrate_forces(state):
 	var bodies = get_tree().get_nodes_in_group("planets")
 	for body in bodies:

@@ -1,6 +1,6 @@
 extends Node2D
 
-
+#Old gravity calculation
 func x_ready():
 	var sum := Vector2.ZERO
 	for target in $bodies.get_children():

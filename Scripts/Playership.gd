@@ -20,18 +20,17 @@ var repenergi = 400
 var repenergirecovery = 1
 
 #Combat variables
-@export var health = 600.0
+@export var health = 6000.0
 
 
 
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group('planets') and body != self:
-		health -= (self.angular_velocity-body.angular_velocity).get_length
-	#print(health)
+#Taking damge
+func take_damage(damage):
+	health -= damage
 
-
-func _integrate_forces(delta):
+func _process(delta):
+	#print("Player", health)
 	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):
@@ -42,8 +41,7 @@ func _integrate_forces(delta):
 					var direction = (body.global_position - self.global_position).normalized()
 					body.apply_central_impulse((direction * 100000 ))
 					repenergi = 0
-
-
+	
 	if not Input.is_action_pressed("Repulse"):
 		repenergi += repenergirecovery
 		if repenergi > maxrepenergi:
@@ -51,6 +49,14 @@ func _integrate_forces(delta):
 	#print(repenergi)
 	
 	
+
+#Collision damage
+func _on_area_2d_body_entered(body):
+	if body.is_in_group('planets') and body != self:
+		health -= Vector2((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length()
+
+
+func _integrate_forces(delta):
 	
 	#Changing gravity
 	if Input.is_action_just_pressed("gravityup"):
