@@ -30,7 +30,7 @@ func take_damage(damage):
 	health -= damage
 
 func _process(delta):
-	#print("Player", health)
+	print("Player", health)
 	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):

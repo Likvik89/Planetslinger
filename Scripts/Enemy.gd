@@ -16,8 +16,8 @@ extends RigidBody2D
 #Collision damage
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('planets') and body != self:
-		health -= Vector2((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length()
-	print(health)
+		health -= Vector2((self.linear_velocity)-(body.linear_velocity)).length()
+	#print(health)
 
 #Shooting
 func shoot():
