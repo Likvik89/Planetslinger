@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceidb1v0s1485"]
+[gd_scene load_steps=8 format=3 uid="uid://ceidb1v0s1485"]
 
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 [ext_resource type="PackedScene" uid="uid://cbw8g3l4vl6gq" path="res://Scenes/Enemy.tscn" id="5_m6m72"]
 [ext_resource type="PackedScene" uid="uid://dg1hws2hww7rm" path="res://Scenes/spaece_background.tscn" id="5_worp5"]
+[ext_resource type="PackedScene" uid="uid://gbcf4kpqno52" path="res://Scenes/ui.tscn" id="6_w0ik0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ld176"]
 size = Vector2(7003, 502)
@@ -36,6 +37,12 @@ position = Vector2(654, 488)
 
 [node name="Playership" parent="Bodies" instance=ExtResource("4_nh8i3")]
 position = Vector2(349, 273)
+
+[node name="UI" parent="Bodies/Playership" instance=ExtResource("6_w0ik0")]
+offset_left = -477.0
+offset_top = -265.0
+offset_right = -477.0
+offset_bottom = -265.0
 
 [node name="Enemy" parent="Bodies" node_paths=PackedStringArray("player") instance=ExtResource("5_m6m72")]
 position = Vector2(368, 177)
