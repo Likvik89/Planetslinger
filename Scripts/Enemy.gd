@@ -4,7 +4,7 @@ extends RigidBody2D
 @export var health = 400
 
 #Movement variables
-@export var player : RigidBody2D
+@export var player
 @export var speed = 600
 @export var safetydistance = 0
 
@@ -35,6 +35,8 @@ func _process(delta):
 			cooldown = firingspeed
 		else:
 			cooldown -= delta
+	if health < 0:
+		queue_free()
 
 #Gravity/movement
 func _integrate_forces(state):
