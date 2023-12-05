@@ -90,6 +90,11 @@ func _integrate_forces(delta):
 		var direction = Vector2(cos(rotation), sin(rotation))  # Calculate backward direction based on rotation
 		apply_central_impulse(-direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
 	
+	if global_position.x < -2999:
+		global_position.x = 2999
+	if global_position.x > 2999:
+		global_position.x = -2999
+	
 	
 	#Boosting
 	if Input.is_action_pressed("move_boost") and fuel > 0:
