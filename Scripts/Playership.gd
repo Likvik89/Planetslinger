@@ -8,16 +8,16 @@ const rotationspeed = 250.0
 #Gravity variables
 @export var G = 1000  # Gravitational constant
 @export var startmass = 700
-@export var gravitychange = 50
+@export var gravitychange = 100
 
 #Boosting variables
 @export var maxfuel := 200
 var fuel = 200
 
 #Repulsion variables
-@export var maxrepenergi := 400
-var repenergi = 400
-var repenergirecovery = 1
+@export var maxrepulseenergi := 400
+var repulseenergi = 400
+var repulseenergirecovery = 1
 
 #Combat variables
 @export var health = 6000.0
@@ -31,21 +31,22 @@ func take_damage(damage):
 
 func _process(delta):
 	#print("Player", health)
+	print("garvity", self.mass)
 	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):
-		if repenergi == maxrepenergi:
+		if repulseenergi == maxrepulseenergi:
 			for body in $"Repulsion field".get_overlapping_bodies():
 				if body != self:
 					var distance = self.global_position.distance_to(body.global_position)
 					var direction = (body.global_position - self.global_position).normalized()
 					body.apply_central_impulse((direction * 100000 ))
-					repenergi = 0
+					repulseenergi = 0
 	
 	if not Input.is_action_pressed("Repulse"):
-		repenergi += repenergirecovery
-		if repenergi > maxrepenergi:
-			repenergi = maxrepenergi
+		repulseenergi += repulseenergirecovery
+		if repulseenergi > maxrepulseenergi:
+			repulseenergi = maxrepulseenergi
 	#print(repenergi)
 	
 	
@@ -66,8 +67,8 @@ func _integrate_forces(delta):
 	
 	if self.mass < startmass:
 		self.mass = startmass
-	if self.mass > startmass*2:
-		self.mass = startmass*2
+	if self.mass > startmass*4:
+		self.mass = startmass*4
 	
 	#Gravity calculation
 	var bodies = get_tree().get_nodes_in_group("planets")
