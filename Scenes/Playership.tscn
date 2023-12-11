@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=13 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Texture2D" uid="uid://bmp5mjfuvc7c1" path="res://sprites/SpaceShips/ship-0.png" id="1_dva03"]
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
@@ -46,8 +46,9 @@ radius = 6.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xa5ig"]
 radius = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bp53t"]
-radius = 65.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4o500"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u1uda"]
 
 [node name="playership" type="RigidBody2D" groups=["planets", "player"]]
 mass = 700.0
@@ -84,6 +85,11 @@ shape = SubResource("CapsuleShape2D_xa5ig")
 [node name="Repulsion field" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Repulsion field"]
-shape = SubResource("CircleShape2D_bp53t")
+position = Vector2(-22, 12)
+shape = SubResource("CapsuleShape2D_4o500")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Repulsion field"]
+position = Vector2(34, -20)
+shape = SubResource("CapsuleShape2D_u1uda")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_area_2d_body_entered"]
