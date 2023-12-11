@@ -6,7 +6,7 @@ extends RigidBody2D
 #Movement variables
 var player
 @export var speed = 600
-@export var safetydistance = 0
+@export var safetydistance = randi_range(0,50)
 
 #Shooting variables
 @export var bullet : PackedScene
@@ -58,12 +58,13 @@ func _integrate_forces(state):
 	
 	#Movement
 	if player != null:
-		var player_direction = (player.position - position).normalized()
-		var player_distance = position.distance_to(player.position)
-		var rotation_angle = atan2(player_direction.y, player_direction.x)
-		rotation = rotation_angle
-		if player_distance > safetydistance:
-			apply_impulse(player_direction*speed)
-		else:
-			apply_impulse(-player_direction*speed)
+		if ! self.linear_velocity.length() > 5000: 
+			var player_direction = (player.position - position).normalized()
+			var player_distance = position.distance_to(player.position)
+			var rotation_angle = atan2(player_direction.y, player_direction.x)
+			rotation = rotation_angle
+			if player_distance > safetydistance:
+				apply_impulse(player_direction*speed)
+			else:
+				apply_impulse(-player_direction*speed)
 

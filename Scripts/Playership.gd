@@ -20,7 +20,7 @@ var repulseenergi = 400
 var repulseenergirecovery = 1
 
 #Combat variables
-@export var health = 6000.0
+@export var health = 99999.0
 
 
 
@@ -39,6 +39,8 @@ func _on_area_2d_body_entered(body):
 func _process(delta):
 	#print("Player", health)
 	#print("garvity", self.mass)
+	if health < 0:
+		queue_free()
 	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):

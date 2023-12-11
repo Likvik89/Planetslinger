@@ -2,7 +2,7 @@ extends Node2D
 
 @export var enemy : PackedScene
 @onready var player = $Playership
-var cooldown = 1
+var cooldown = 0
 var spawnspeed = 10
 
 @onready var splo = [$spawnlocation, $spawnlocation2, $spawnlocation3, $spawnlocation4] # spawn locations

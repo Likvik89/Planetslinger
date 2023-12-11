@@ -8,13 +8,13 @@ script = ExtResource("1_u0b3h")
 enemy = ExtResource("2_0rtml")
 
 [node name="spawnlocation" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(-35, -22)
+position = Vector2(3000, 3000)
 
 [node name="spawnlocation2" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(-26, 31)
+position = Vector2(-3000, 3000)
 
 [node name="spawnlocation3" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(25, -20)
+position = Vector2(-3000, -3000)
 
 [node name="spawnlocation4" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(13, 16)
+position = Vector2(3000, -3000)
