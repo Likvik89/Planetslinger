@@ -14,3 +14,4 @@ func x_ready():
 
 #func _process(delta):
 	#calculate_gravity_force()
+	
