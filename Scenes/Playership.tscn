@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=28 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
 [ext_resource type="Texture2D" uid="uid://rlru65sdmrxl" path="res://sprites/Exhaust/Exhaust3.png" id="2_5ff5l"]
@@ -63,33 +63,17 @@ region = Rect2(0, 960, 96, 96)
 atlas = ExtResource("4_nhhr5")
 region = Rect2(0, 0, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a7w57"]
-atlas = ExtResource("4_nhhr5")
-region = Rect2(0, 96, 96, 96)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j25m"]
 atlas = ExtResource("4_nhhr5")
 region = Rect2(0, 192, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8rwsx"]
-atlas = ExtResource("4_nhhr5")
-region = Rect2(0, 288, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd3pd"]
 atlas = ExtResource("4_nhhr5")
 region = Rect2(0, 384, 96, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwsor"]
-atlas = ExtResource("4_nhhr5")
-region = Rect2(0, 480, 96, 96)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xjgy"]
 atlas = ExtResource("4_nhhr5")
 region = Rect2(0, 576, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gefr"]
-atlas = ExtResource("4_nhhr5")
-region = Rect2(0, 672, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fg7b"]
 atlas = ExtResource("4_nhhr5")
@@ -141,25 +125,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_xgrbk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a7w57")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5j25m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8rwsx")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dd3pd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xwsor")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_6xjgy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0gefr")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6fg7b")
@@ -239,9 +211,11 @@ rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_tbhcd")
 animation = &"repulse"
 
-[node name="Repulse2" type="AnimatedSprite2D" parent="Repulsion field"]
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_tbhcd")
-animation = &"repulse"
+[node name="Label" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -108.0
+offset_right = 20.0
+offset_bottom = -85.0
+text = "Score"
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_area_2d_body_entered"]

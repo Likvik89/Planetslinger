@@ -54,6 +54,7 @@ func _process(delta):
 					body.apply_central_impulse((direction * 300000 ))
 					repulseenergi = 0
 	
+	
 	if not Input.is_action_pressed("Repulse"):
 		repulseenergi += repulseenergirecovery
 		if repulseenergi > maxrepulseenergi:

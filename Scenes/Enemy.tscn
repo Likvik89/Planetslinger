@@ -20,6 +20,8 @@ mass = 200.0
 gravity_scale = 0.0
 freeze_mode = 1
 script = ExtResource("1_sthxs")
+health = 600
+speed = 300
 bullet = ExtResource("2_guuww")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
