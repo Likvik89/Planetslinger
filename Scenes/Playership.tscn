@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=32 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
 [ext_resource type="Texture2D" uid="uid://rlru65sdmrxl" path="res://sprites/Exhaust/Exhaust3.png" id="2_5ff5l"]
@@ -99,6 +99,26 @@ region = Rect2(0, 768, 96, 96)
 atlas = ExtResource("4_nhhr5")
 region = Rect2(0, 864, 96, 96)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljeqp"]
+atlas = ExtResource("4_nhhr5")
+region = Rect2(0, 768, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywrik"]
+atlas = ExtResource("4_nhhr5")
+region = Rect2(0, 576, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm6bu"]
+atlas = ExtResource("4_nhhr5")
+region = Rect2(0, 384, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_coq5t"]
+atlas = ExtResource("4_nhhr5")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbf44"]
+atlas = ExtResource("4_nhhr5")
+region = Rect2(0, 0, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fj80r"]
 atlas = ExtResource("4_nhhr5")
 region = Rect2(0, 960, 96, 96)
@@ -147,12 +167,27 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1xj3")
 }, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ljeqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywrik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm6bu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_coq5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbf44")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fj80r")
 }],
 "loop": false,
 "name": &"repulse",
-"speed": 11.0
+"speed": 30.0
 }]
 
 [node name="playership" type="RigidBody2D" groups=["planets", "player"]]
