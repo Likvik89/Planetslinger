@@ -22,6 +22,7 @@ var repulseenergirecovery = 1
 #Combat variables
 @export var health = 99999.0
 
+@onready var anim = $"Repulsion field/Repulse"
 
 
 
@@ -45,6 +46,7 @@ func _process(delta):
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):
 		if repulseenergi == maxrepulseenergi:
+			anim.play("repulse")
 			for body in $"Repulsion field".get_overlapping_bodies():
 				if body != self:
 					var distance = self.global_position.distance_to(body.global_position)
