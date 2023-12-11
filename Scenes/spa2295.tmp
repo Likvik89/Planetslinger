@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceidb1v0s1485"]
+[gd_scene load_steps=8 format=3 uid="uid://ceidb1v0s1485"]
 
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
+[ext_resource type="PackedScene" uid="uid://cbw8g3l4vl6gq" path="res://Scenes/Enemy.tscn" id="3_76lfs"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 [ext_resource type="PackedScene" uid="uid://c2l0lmddivget" path="res://Scenes/enemyspawner.tscn" id="5_pritn"]
 [ext_resource type="PackedScene" uid="uid://dg1hws2hww7rm" path="res://Scenes/spaece_background.tscn" id="5_worp5"]
@@ -36,7 +37,7 @@ position = Vector2(84, 64)
 position = Vector2(256, 195)
 
 [node name="Planet2" parent="Bodies" instance=ExtResource("3_1lsuq")]
-position = Vector2(-248, 5)
+position = Vector2(654, 488)
 
 [node name="Edge of spaece" type="RigidBody2D" parent="."]
 position = Vector2(87, -7)
@@ -66,4 +67,12 @@ shape = SubResource("RectangleShape2D_ld176")
 
 [node name="Playership" parent="Enemyspawner" instance=ExtResource("4_nh8i3")]
 unique_name_in_owner = true
-position = Vector2(130, 110)
+position = Vector2(166, 100)
+
+[node name="Enemy" parent="Enemyspawner" instance=ExtResource("3_76lfs")]
+position = Vector2(84, 64)
+G = null
+speed = null
+safetydistance = null
+firingspeed = null
+cooldown = null

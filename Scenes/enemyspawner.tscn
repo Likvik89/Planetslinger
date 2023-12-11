@@ -3,6 +3,18 @@
 [ext_resource type="Script" path="res://Scripts/Enemyspawner.gd" id="1_u0b3h"]
 [ext_resource type="PackedScene" uid="uid://cbw8g3l4vl6gq" path="res://Scenes/Enemy.tscn" id="2_0rtml"]
 
-[node name="Enemyspawner" type="Node2D"]
+[node name="Shipcontainer" type="Node2D"]
 script = ExtResource("1_u0b3h")
 enemy = ExtResource("2_0rtml")
+
+[node name="spawnlocation" type="Marker2D" parent="." groups=["enemy spawn locations"]]
+position = Vector2(-35, -22)
+
+[node name="spawnlocation2" type="Marker2D" parent="." groups=["enemy spawn locations"]]
+position = Vector2(-26, 31)
+
+[node name="spawnlocation3" type="Marker2D" parent="." groups=["enemy spawn locations"]]
+position = Vector2(25, -20)
+
+[node name="spawnlocation4" type="Marker2D" parent="." groups=["enemy spawn locations"]]
+position = Vector2(13, 16)
