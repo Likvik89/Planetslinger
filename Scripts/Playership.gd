@@ -22,6 +22,7 @@ var repulseenergirecovery = 1
 #Combat variables
 @export var health = 99999.0
 
+var score = 0
 @onready var anim = $"Repulsion field/Repulse"
 
 

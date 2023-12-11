@@ -42,7 +42,9 @@ func _process(delta):
 			else:
 				cooldown -= delta
 		if health < 0:
+			player.score += 300
 			queue_free()
+			
 
 #Gravity/movement
 func _integrate_forces(state):
