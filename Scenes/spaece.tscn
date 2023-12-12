@@ -60,15 +60,6 @@ position = Vector2(-3338, -2)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ld176")
 
-[node name="Bodies" type="Node2D" parent="."]
-position = Vector2(84, 64)
-
-[node name="Planet" parent="Bodies" instance=ExtResource("3_1lsuq")]
-position = Vector2(256, 195)
-
-[node name="Planet2" parent="Bodies" instance=ExtResource("3_1lsuq")]
-position = Vector2(-260, 27)
-
 [node name="Enemyspawner" parent="." instance=ExtResource("5_pritn")]
 
 [node name="Playership" parent="Enemyspawner" instance=ExtResource("4_nh8i3")]
