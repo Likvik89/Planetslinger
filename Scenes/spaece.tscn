@@ -76,3 +76,5 @@ offset_bottom = 121.0
 label_settings = SubResource("LabelSettings_l04gt")
 horizontal_alignment = 1
 script = ExtResource("6_p7bf0")
+
+[node name="gravity meter" type="AnimatedSprite2D" parent="Enemyspawner/CanvasLayer"]

@@ -5,14 +5,19 @@ extends Node2D
 var cooldown = 0
 var spawnspeed = 10
 
-@onready var splo = [$spawnlocation, $spawnlocation2, $spawnlocation3, $spawnlocation4] # spawn locations
+
+
 
 
 func spawn():
 	var spawn = enemy.instantiate()
-	var spawnlocation = splo[randi() % splo.size()]
-	spawn.player = player
-	spawn.position = spawnlocation.global_position
+	var spawndistance = randi_range(500.0,700.0)
+	var spawnangle = randi_range(0.0,360.0)
+	var direction = Vector2(cos(spawnangle), sin(spawnangle))
+	var spawnposition = player.position + Vector2(direction*spawndistance)
+	
+	
+	spawn.position = spawnposition
 	add_child(spawn)
 	print("Spawning")
 
