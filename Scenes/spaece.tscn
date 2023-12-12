@@ -30,8 +30,8 @@ format = 2
 [node name="TextureRect" type="TextureRect" parent="Background(s)"]
 offset_left = -3848.0
 offset_top = -3674.0
-offset_right = 3722.0
-offset_bottom = 3702.0
+offset_right = 3942.0
+offset_bottom = 3719.0
 texture = ExtResource("2_iutna")
 stretch_mode = 1
 
@@ -66,7 +66,7 @@ position = Vector2(84, 64)
 position = Vector2(256, 195)
 
 [node name="Planet2" parent="Bodies" instance=ExtResource("3_1lsuq")]
-position = Vector2(-248, 5)
+position = Vector2(-260, 27)
 
 [node name="Enemyspawner" parent="." instance=ExtResource("5_pritn")]
 
