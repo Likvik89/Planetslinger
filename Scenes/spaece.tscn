@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceidb1v0s1485"]
+[gd_scene load_steps=9 format=3 uid="uid://ceidb1v0s1485"]
 
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 [ext_resource type="PackedScene" uid="uid://c2l0lmddivget" path="res://Scenes/enemyspawner.tscn" id="5_pritn"]
 [ext_resource type="PackedScene" uid="uid://dg1hws2hww7rm" path="res://Scenes/spaece_background.tscn" id="5_worp5"]
+[ext_resource type="Script" path="res://Scripts/score UI.gd" id="6_p7bf0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ld176"]
 size = Vector2(7003, 502)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l04gt"]
+font_size = 32
 
 [node name="Spaæece" type="Node2D"]
 script = ExtResource("1_8xrhg")
@@ -63,3 +67,12 @@ position = Vector2(-248, 5)
 
 [node name="Playership" parent="Enemyspawner" instance=ExtResource("4_nh8i3")]
 unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Enemyspawner"]
+
+[node name="Label" type="Label" parent="Enemyspawner/CanvasLayer"]
+offset_right = 1152.0
+offset_bottom = 121.0
+label_settings = SubResource("LabelSettings_l04gt")
+horizontal_alignment = 1
+script = ExtResource("6_p7bf0")
