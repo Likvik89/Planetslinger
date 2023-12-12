@@ -42,7 +42,7 @@ func _on_area_2d_body_entered(body):
 
 #Repulsing
 func _process(delta):
-	#print("Player", health)
+	print("Player", health)
 	#print("garvity", self.mass)
 	if health < 0:
 		queue_free()

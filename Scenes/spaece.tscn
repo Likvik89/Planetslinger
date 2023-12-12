@@ -1,17 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceidb1v0s1485"]
+[gd_scene load_steps=10 format=3 uid="uid://ceidb1v0s1485"]
 
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
+[ext_resource type="Texture2D" uid="uid://0jynubnk5guv" path="res://sprites/Backgrounds/Space Background.png" id="2_iutna"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 [ext_resource type="PackedScene" uid="uid://c2l0lmddivget" path="res://Scenes/enemyspawner.tscn" id="5_pritn"]
-[ext_resource type="PackedScene" uid="uid://dg1hws2hww7rm" path="res://Scenes/spaece_background.tscn" id="5_worp5"]
 [ext_resource type="PackedScene" uid="uid://gbcf4kpqno52" path="res://Scenes/UI.tscn" id="6_piu2p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n38p"]
+texture = ExtResource("2_iutna")
+texture_region_size = Vector2i(3000, 3000)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ild0a"]
+sources/2 = SubResource("TileSetAtlasSource_7n38p")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ld176"]
 size = Vector2(7003, 502)
 
 [node name="Spaæece" type="Node2D"]
 script = ExtResource("1_8xrhg")
+
+[node name="Background(s)" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Background(s)"]
+tile_set = SubResource("TileSet_ild0a")
+format = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background(s)"]
+offset_left = -3848.0
+offset_top = -3674.0
+offset_right = 3722.0
+offset_bottom = 3702.0
+texture = ExtResource("2_iutna")
+stretch_mode = 1
 
 [node name="Edge of spaece" type="RigidBody2D" parent="."]
 position = Vector2(87, -7)
@@ -36,20 +58,6 @@ shape = SubResource("RectangleShape2D_ld176")
 position = Vector2(-3338, -2)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ld176")
-
-[node name="Background(s)" type="Node2D" parent="."]
-
-[node name="Spaece background" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(-1500, -1500)
-
-[node name="Spaece background2" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(1500, -1500)
-
-[node name="Spaece background3" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(-1500, 1500)
-
-[node name="Spaece background4" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(1500, 1500)
 
 [node name="Bodies" type="Node2D" parent="."]
 position = Vector2(84, 64)

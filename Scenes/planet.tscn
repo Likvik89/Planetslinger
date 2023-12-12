@@ -1,4 +1,4 @@
-[gd_scene load_steps=650 format=3 uid="uid://d166e7r2yvule"]
+[gd_scene load_steps=651 format=3 uid="uid://d166e7r2yvule"]
 
 [ext_resource type="Script" path="res://Scripts/planet.gd" id="1_75xrk"]
 [ext_resource type="Texture2D" uid="uid://c4hjwmhqnddkj" path="res://sprites/Planets/Planet1.png" id="2_47rgj"]
@@ -4519,6 +4519,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pib20"]
+radius = 50.0
+
 [node name="Planet" type="RigidBody2D" groups=["planets"]]
 mass = 800.0
 gravity_scale = 0.0
@@ -4537,5 +4540,6 @@ animation = &"gasgiant"
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_pib20")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
