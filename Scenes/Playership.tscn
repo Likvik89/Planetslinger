@@ -1,10 +1,35 @@
-[gd_scene load_steps=29 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=36 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
 [ext_resource type="Texture2D" uid="uid://rlru65sdmrxl" path="res://sprites/Exhaust/Exhaust3.png" id="2_5ff5l"]
+[ext_resource type="Texture2D" uid="uid://d21w62ttsorh2" path="res://sprites/Exhaust/Boost_Exhaust.png" id="2_83qdo"]
 [ext_resource type="Texture2D" uid="uid://cxovmxbrtvpvx" path="res://sprites/SpaceShips/Purple.png" id="3_e7ha8"]
 [ext_resource type="Texture2D" uid="uid://5w5gt5qhydm5" path="res://sprites/Playeranimations/repulse.png" id="4_nhhr5"]
 [ext_resource type="Script" path="res://Scripts/score UI.gd" id="5_lggot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og23t"]
+atlas = ExtResource("2_83qdo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj7yd"]
+atlas = ExtResource("2_83qdo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eva5r"]
+atlas = ExtResource("2_83qdo")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnlm1"]
+atlas = ExtResource("2_83qdo")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65jih"]
+atlas = ExtResource("2_83qdo")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt6gh"]
+atlas = ExtResource("2_83qdo")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0bgr"]
 atlas = ExtResource("2_5ff5l")
@@ -24,6 +49,29 @@ region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ifhd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og23t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj7yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eva5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnlm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65jih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt6gh")
+}],
+"loop": true,
+"name": &"boosting",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n0bgr")
@@ -172,8 +220,8 @@ script = ExtResource("1_w6fab")
 position = Vector2(-13, 0)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_4ifhd")
+animation = &"boosting"
 autoplay = "default"
-frame_progress = 0.277449
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

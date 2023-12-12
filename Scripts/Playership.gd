@@ -22,8 +22,10 @@ var repulseenergirecovery = 1
 #Combat variables
 @export var health = 99999.0
 
-var score = 0
+
 @onready var anim = $"Repulsion field/Repulse"
+@onready var exhaustanim = $exhaust
+
 
 
 
@@ -103,11 +105,14 @@ func _integrate_forces(delta):
 	#Boosting
 	if Input.is_action_pressed("move_boost") and fuel > 0:
 		THRUST_FORCE = 50
+		exhaustanim.play("boosting")
 		if fuel >= 2:
 			fuel -=2
 	else:
 		THRUST_FORCE = 25
 		fuel += 2
+		exhaustanim.play("default")
+		
 	
 	if fuel > maxfuel:
 		fuel = maxfuel
