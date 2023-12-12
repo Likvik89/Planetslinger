@@ -271,5 +271,5 @@ horizontal_alignment = 1
 script = ExtResource("1_yu1ab")
 
 [node name="gravity meter" type="AnimatedSprite2D" parent="."]
-position = Vector2(509, 173)
+position = Vector2(1070, 77)
 sprite_frames = SubResource("SpriteFrames_mljn4")

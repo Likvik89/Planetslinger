@@ -29,10 +29,10 @@ var repulseenergirecovery = 1
 
 
 
-
 #Taking damge
 func take_damage(damage):
 	health -= damage
+
 
 #Collision damage
 func _on_area_2d_body_entered(body):
@@ -40,7 +40,7 @@ func _on_area_2d_body_entered(body):
 		take_damage(((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length())
 
 
-
+#Repulsing
 func _process(delta):
 	#print("Player", health)
 	#print("garvity", self.mass)
@@ -63,11 +63,10 @@ func _process(delta):
 		repulseenergi += repulseenergirecovery
 		if repulseenergi > maxrepulseenergi:
 			repulseenergi = maxrepulseenergi
-	#print(repenergi)
-	
-	
 
 
+#Gravity
+#Movement
 func _integrate_forces(delta):
 	
 	#Changing gravity

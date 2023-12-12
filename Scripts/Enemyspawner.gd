@@ -3,7 +3,7 @@ extends Node2D
 @export var enemy : PackedScene
 @onready var player = $Playership
 var cooldown = 0
-var spawnspeed = 10
+var spawnspeed = 5
 
 
 func _ready():
@@ -21,7 +21,6 @@ func spawn():
 	spawn.position = spawnposition
 	spawn.player = player
 	add_child(spawn)
-	print("Spawning")
 
 func _process(delta):
 	
