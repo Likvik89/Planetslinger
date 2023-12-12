@@ -2,21 +2,28 @@ extends Node2D
 
 @export var enemy : PackedScene
 @onready var player = $Playership
-var cooldown = 1
-var spawnspeed = 10
+var cooldown = 0
+var spawnspeed = 5
 
-@onready var splo = [$spawnlocation, $spawnlocation2, $spawnlocation3, $spawnlocation4] # spawn locations
+
+func _ready():
+	$UI.player = player
 
 
 func spawn():
 	var spawn = enemy.instantiate()
-	var spawnlocation = splo[randi() % splo.size()]
+	var spawndistance = randi_range(500.0,700.0)
+	var spawnangle = randi_range(0.0,360.0)
+	var direction = Vector2(cos(spawnangle), sin(spawnangle))
+	var spawnposition = player.position + Vector2(direction*spawndistance)
+	
+	
+	spawn.position = spawnposition
 	spawn.player = player
-	spawn.position = spawnlocation.global_position
 	add_child(spawn)
-	print("Spawning")
 
 func _process(delta):
+	
 	
 	if cooldown <= 0:
 		spawn()

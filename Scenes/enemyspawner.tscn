@@ -6,15 +6,3 @@
 [node name="Shipcontainer" type="Node2D"]
 script = ExtResource("1_u0b3h")
 enemy = ExtResource("2_0rtml")
-
-[node name="spawnlocation" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(-35, -22)
-
-[node name="spawnlocation2" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(-26, 31)
-
-[node name="spawnlocation3" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(25, -20)
-
-[node name="spawnlocation4" type="Marker2D" parent="." groups=["enemy spawn locations"]]
-position = Vector2(13, 16)

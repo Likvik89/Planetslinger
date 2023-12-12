@@ -8,7 +8,8 @@ const rotationspeed = 250.0
 #Gravity variables
 @export var G = 1000  # Gravitational constant
 @export var startmass = 700
-@export var gravitychange = 100
+@export var gravitychange = 200
+var maxmass = startmass*4
 
 #Boosting variables
 @export var maxfuel := 200
@@ -20,8 +21,11 @@ var repulseenergi = 400
 var repulseenergirecovery = 1
 
 #Combat variables
-@export var health = 6000.0
+@export var health = 99999.0
 
+
+@onready var anim = $"Repulsion field/Repulse"
+@onready var exhaustanim = $exhaust
 
 
 
@@ -29,20 +33,24 @@ var repulseenergirecovery = 1
 func take_damage(damage):
 	health -= damage
 
+
 #Collision damage
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('planets') and body != self:
 		take_damage(((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length())
 
 
-
+#Repulsing
 func _process(delta):
-	#print("Player", health)
+	print("Player", health)
 	#print("garvity", self.mass)
+	if health < 0:
+		queue_free()
 	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):
 		if repulseenergi == maxrepulseenergi:
+			anim.play("repulse")
 			for body in $"Repulsion field".get_overlapping_bodies():
 				if body != self:
 					var distance = self.global_position.distance_to(body.global_position)
@@ -50,15 +58,15 @@ func _process(delta):
 					body.apply_central_impulse((direction * 300000 ))
 					repulseenergi = 0
 	
+	
 	if not Input.is_action_pressed("Repulse"):
 		repulseenergi += repulseenergirecovery
 		if repulseenergi > maxrepulseenergi:
 			repulseenergi = maxrepulseenergi
-	#print(repenergi)
-	
-	
 
 
+#Gravity
+#Movement
 func _integrate_forces(delta):
 	
 	#Changing gravity
@@ -69,8 +77,8 @@ func _integrate_forces(delta):
 	
 	if self.mass < startmass:
 		self.mass = startmass
-	if self.mass > startmass*4:
-		self.mass = startmass*4
+	if self.mass > maxmass:
+		self.mass = maxmass
 	
 	#Gravity calculation
 	var bodies = get_tree().get_nodes_in_group("planets")
@@ -97,11 +105,14 @@ func _integrate_forces(delta):
 	#Boosting
 	if Input.is_action_pressed("move_boost") and fuel > 0:
 		THRUST_FORCE = 50
+		exhaustanim.play("boosting")
 		if fuel >= 2:
 			fuel -=2
 	else:
 		THRUST_FORCE = 25
 		fuel += 2
+		exhaustanim.play("default")
+	
 	
 	if fuel > maxfuel:
 		fuel = maxfuel
