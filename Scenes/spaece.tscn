@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 [ext_resource type="PackedScene" uid="uid://c2l0lmddivget" path="res://Scenes/enemyspawner.tscn" id="5_pritn"]
-[ext_resource type="PackedScene" uid="uid://gbcf4kpqno52" path="res://Scenes/UI.tscn" id="6_piu2p"]
+[ext_resource type="PackedScene" uid="uid://gbcf4kpqno52" path="res://Scenes/ui.tscn" id="6_piu2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n38p"]
 texture = ExtResource("2_iutna")
@@ -20,6 +20,7 @@ size = Vector2(7003, 502)
 
 [node name="Spaæece" type="Node2D"]
 script = ExtResource("1_8xrhg")
+planet = ExtResource("3_1lsuq")
 
 [node name="Background(s)" type="Node2D" parent="."]
 
@@ -31,7 +32,7 @@ format = 2
 offset_left = -3848.0
 offset_top = -3674.0
 offset_right = 3942.0
-offset_bottom = 3719.0
+offset_bottom = 3847.0
 texture = ExtResource("2_iutna")
 stretch_mode = 1
 
@@ -72,6 +73,7 @@ position = Vector2(-260, 27)
 
 [node name="Playership" parent="Enemyspawner" instance=ExtResource("4_nh8i3")]
 unique_name_in_owner = true
+position = Vector2(-3, 0)
 
 [node name="UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
 unique_name_in_owner = true

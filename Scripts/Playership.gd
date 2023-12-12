@@ -112,7 +112,7 @@ func _integrate_forces(delta):
 		THRUST_FORCE = 25
 		fuel += 2
 		exhaustanim.play("default")
-		
+	
 	
 	if fuel > maxfuel:
 		fuel = maxfuel
