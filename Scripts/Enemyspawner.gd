@@ -6,7 +6,8 @@ var cooldown = 0
 var spawnspeed = 10
 
 
-
+func _ready():
+	$UI.player = player
 
 
 func spawn():
@@ -18,10 +19,12 @@ func spawn():
 	
 	
 	spawn.position = spawnposition
+	spawn.player = player
 	add_child(spawn)
 	print("Spawning")
 
 func _process(delta):
+	
 	
 	if cooldown <= 0:
 		spawn()

@@ -8,7 +8,8 @@ const rotationspeed = 250.0
 #Gravity variables
 @export var G = 1000  # Gravitational constant
 @export var startmass = 700
-@export var gravitychange = 100
+@export var gravitychange = 200
+var maxmass = startmass*4
 
 #Boosting variables
 @export var maxfuel := 200
@@ -77,8 +78,8 @@ func _integrate_forces(delta):
 	
 	if self.mass < startmass:
 		self.mass = startmass
-	if self.mass > startmass*4:
-		self.mass = startmass*4
+	if self.mass > maxmass:
+		self.mass = maxmass
 	
 	#Gravity calculation
 	var bodies = get_tree().get_nodes_in_group("planets")

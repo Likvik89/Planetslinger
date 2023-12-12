@@ -66,4 +66,3 @@ position = Vector2(-248, 5)
 unique_name_in_owner = true
 
 [node name="UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
-unique_name_in_owner = true
