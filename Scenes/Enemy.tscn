@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbw8g3l4vl6gq"]
+[gd_scene load_steps=9 format=3 uid="uid://cbw8g3l4vl6gq"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_sthxs"]
 [ext_resource type="PackedScene" uid="uid://bfy027aivppay" path="res://Scenes/explosion.tscn" id="2_6rdon"]
 [ext_resource type="PackedScene" uid="uid://ol6lcme7rrew" path="res://Scenes/enemyprojectile.tscn" id="2_guuww"]
 [ext_resource type="Texture2D" uid="uid://dw308gdedt3ck" path="res://sprites/SpaceShips/Tyranidv2.png" id="2_jafmd"]
 [ext_resource type="Script" path="res://Scripts/Enemymouth.gd" id="3_dy3g1"]
-[ext_resource type="AudioStream" uid="uid://dpeejmrn2wkxn" path="res://SFX/Blaster_sound.mp3" id="6_0ii7h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cap3y"]
 radius = 16.0
@@ -48,8 +47,5 @@ shape = SubResource("CapsuleShape2D_g0yp0")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(17, 0)
-
-[node name="blaster" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_0ii7h")
 
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_area_2d_body_entered"]

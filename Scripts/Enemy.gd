@@ -23,7 +23,7 @@ func start(_position, _direction):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('planets') and body != self:
 		health -= Vector2((self.linear_velocity)-(body.linear_velocity)).length()
-	
+	#print(health)
 	
 #Shooting
 func shoot():
@@ -31,7 +31,6 @@ func shoot():
 	var prjctl = bullet.instantiate()
 	prjctl.start($Marker2D.global_position, rotation)
 	get_tree().root.add_child(prjctl)
-	$blaster.play()
 
 #Making sure that it doesn't shoot while biting
 #Dying
@@ -44,7 +43,14 @@ func _process(delta):
 				cooldown = firingspeed
 			else:
 				cooldown -= delta
-		
+		#Dying
+		if health < 0:
+			Score.score += 300
+			var kapow = explosion.instantiate()
+			kapow.position = self.position
+			get_tree().root.add_child(kapow)
+			queue_free()
+
 #Gravity/movement
 func _integrate_forces(state):
 	#Gravity
