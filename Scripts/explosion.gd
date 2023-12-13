@@ -7,3 +7,4 @@ func _ready():
 	if self.frame == 6:
 		print("Exploded")
 		queue_free()
+
