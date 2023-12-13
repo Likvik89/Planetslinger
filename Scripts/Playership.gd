@@ -8,7 +8,7 @@ const rotationspeed = 250.0
 #Gravity variables
 @export var G = 1000  # Gravitational constant
 @export var startmass = 700
-@export var gravitychange = 200
+@export var gravitychange = 400
 var maxmass = startmass*4
 
 #Boosting variables
@@ -21,7 +21,7 @@ var repulseenergi = 400.0
 var repulseenergirecovery = 1
 
 #Combat variables
-var health = 1.0
+var health = 99999.0
 @export var maxhealth = 99999.0
 
 
@@ -109,10 +109,14 @@ func _integrate_forces(delta):
 	if Input.is_action_pressed("move_forward"):
 		var direction = Vector2(cos(rotation), sin(rotation)) 
 		apply_central_impulse(direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
-	
+	if Input.is_action_just_pressed("move_forward"):
+		$exaust.play()
+	elif Input.is_action_just_released("move_forward"):
+		$exaust.stop()
 	if Input.is_action_pressed("move_back"):
 		var direction = Vector2(cos(rotation), sin(rotation))  # Calculate backward direction based on rotation
 		apply_central_impulse(-direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
+	
 	
 	
 	#Boosting

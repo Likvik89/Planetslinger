@@ -65,5 +65,5 @@ frame = 6
 frame_progress = 1.0
 script = ExtResource("2_tskoy")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="boom" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_gng12")
