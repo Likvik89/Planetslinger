@@ -218,7 +218,7 @@ gravity_scale = 0.0
 script = ExtResource("1_w6fab")
 death = ExtResource("2_oq2nw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="exaust" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xxwt1")
 
 [node name="exhaust" type="AnimatedSprite2D" parent="."]
