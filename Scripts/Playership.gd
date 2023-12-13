@@ -21,13 +21,12 @@ var repulseenergi = 400
 var repulseenergirecovery = 1
 
 #Combat variables
-@export var health = 99999.0
+var health = 99999.0
+@export var maxhealth = 99999.0
 
 
 @onready var anim = $"Repulsion field/Repulse"
 @onready var exhaustanim = $exhaust
-
-
 
 #Taking damge
 func take_damage(damage):
