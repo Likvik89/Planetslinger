@@ -6,7 +6,7 @@ extends Control
 @onready var energymeter = $"CanvasLayer/energy batterie"
 @onready var fuelmeter = $"CanvasLayer/fuel meter"
 
-var player
+@onready var player = $"../playership"
 
 
 

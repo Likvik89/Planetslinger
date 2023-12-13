@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
 [ext_resource type="Texture2D" uid="uid://0jynubnk5guv" path="res://sprites/Backgrounds/Space Background.png" id="2_iutna"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
-[ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
 [ext_resource type="PackedScene" uid="uid://c2l0lmddivget" path="res://Scenes/enemyspawner.tscn" id="5_pritn"]
 [ext_resource type="PackedScene" uid="uid://gbcf4kpqno52" path="res://Scenes/Gameplay_UI.tscn" id="6_piu2p"]
+[ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="6_soul1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n38p"]
 texture = ExtResource("2_iutna")
@@ -62,9 +62,8 @@ shape = SubResource("RectangleShape2D_ld176")
 
 [node name="Enemyspawner" parent="." instance=ExtResource("5_pritn")]
 
-[node name="Playership" parent="Enemyspawner" instance=ExtResource("4_nh8i3")]
-unique_name_in_owner = true
-position = Vector2(-3, 0)
-
 [node name="Gameplay UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
+unique_name_in_owner = true
+
+[node name="playership" parent="Enemyspawner" instance=ExtResource("6_soul1")]
 unique_name_in_owner = true

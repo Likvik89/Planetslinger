@@ -1,13 +1,13 @@
 extends Node2D
 
 @export var enemy : PackedScene
-@onready var player = $Playership
+@onready var player = $playership
 var cooldown = 0
 var spawnspeed = 5
 
 
-func _ready():
-	$"Gameplay UI".player = player
+#func _ready():
+#	$"Gameplay UI".player = player
 
 
 func spawn():

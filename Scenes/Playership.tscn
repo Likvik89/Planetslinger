@@ -1,9 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://bj7xlge1lg0jp"]
+[gd_scene load_steps=36 format=3 uid="uid://bj7xlge1lg0jp"]
 
 [ext_resource type="Script" path="res://Scripts/Playership.gd" id="1_w6fab"]
 [ext_resource type="Texture2D" uid="uid://rlru65sdmrxl" path="res://sprites/Exhaust/Exhaust3.png" id="2_5ff5l"]
 [ext_resource type="Texture2D" uid="uid://d21w62ttsorh2" path="res://sprites/Exhaust/Boost_Exhaust.png" id="2_83qdo"]
-[ext_resource type="PackedScene" uid="uid://dhrxkxy2wbvc3" path="res://Scenes/gameover_UI.tscn" id="2_fpi3e"]
 [ext_resource type="AudioStream" uid="uid://dwxrttsgtinb0" path="res://SFX/Zoomin.mp3" id="2_xxwt1"]
 [ext_resource type="Texture2D" uid="uid://cxovmxbrtvpvx" path="res://sprites/SpaceShips/Purple.png" id="3_e7ha8"]
 [ext_resource type="Texture2D" uid="uid://5w5gt5qhydm5" path="res://sprites/Playeranimations/repulse.png" id="4_nhhr5"]
@@ -216,7 +215,6 @@ animations = [{
 mass = 700.0
 gravity_scale = 0.0
 script = ExtResource("1_w6fab")
-death = ExtResource("2_fpi3e")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xxwt1")

@@ -27,7 +27,7 @@ var health = 1.0
 
 @onready var anim = $"Repulsion field/Repulse"
 @onready var exhaustanim = $exhaust
-@export var death : PackedScene 
+#@export var death : PackedScene 
 
 #Taking damge
 func take_damage(damage):
@@ -44,8 +44,9 @@ func _on_area_2d_body_entered(body):
 func _process(delta):
 	
 	if health < 0 or health == 0:
-		var gameover = death.instantiate()
-		get_tree().root.add_child(gameover)
+		#var gameover = death.instantiate()
+		#get_tree().root.add_child(gameover)
+		#get_tree().change_scene_to_file("res://Scenes/gameover_UI.tscn")
 		queue_free()
 	
 	#Repulsing
