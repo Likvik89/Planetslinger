@@ -11,7 +11,6 @@ func spawn():
 	var direction = Vector2(cos(spawnangle), sin(spawnangle))
 	var spawnposition = Vector2(direction*spawndistance)
 	
-	
 	spawn.position = spawnposition
 	add_child(spawn)
 
