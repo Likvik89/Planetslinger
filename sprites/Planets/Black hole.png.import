@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1eiy00kdgge5"
-path="res://.godot/imported/repulse.png-ae39ca51ead0af3e6da54e27abb25f5b.ctex"
+uid="uid://vagd687en66w"
+path="res://.godot/imported/Black hole.png-8a3b3c70c46d45f2a00be0e60c9dc8de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/repulse.png"
-dest_files=["res://.godot/imported/repulse.png-ae39ca51ead0af3e6da54e27abb25f5b.ctex"]
+source_file="res://sprites/Planets/Black hole.png"
+dest_files=["res://.godot/imported/Black hole.png-8a3b3c70c46d45f2a00be0e60c9dc8de.ctex"]
 
 [params]
 
