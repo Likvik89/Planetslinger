@@ -7,10 +7,11 @@ var spawnspeed = 5
 
 
 func _ready():
-	$UI.player = player
+	$"Gameplay UI".player = player
 
 
 func spawn():
+	
 	var spawn = enemy.instantiate()
 	var spawndistance = randi_range(500.0,700.0)
 	var spawnangle = randi_range(0.0,360.0)

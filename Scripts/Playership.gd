@@ -21,12 +21,13 @@ var repulseenergi = 400.0
 var repulseenergirecovery = 1
 
 #Combat variables
-var health = 99999.0
+var health = 1.0
 @export var maxhealth = 99999.0
 
 
 @onready var anim = $"Repulsion field/Repulse"
 @onready var exhaustanim = $exhaust
+@export var death : PackedScene 
 
 #Taking damge
 func take_damage(damage):
@@ -42,7 +43,9 @@ func _on_area_2d_body_entered(body):
 #Repulsing
 func _process(delta):
 	
-	if health < 0:
+	if health < 0 or health == 0:
+		var gameover = death.instantiate()
+		get_tree().root.add_child(gameover)
 		queue_free()
 	
 	#Repulsing
@@ -61,6 +64,18 @@ func _process(delta):
 		repulseenergi += repulseenergirecovery
 		if repulseenergi > maxrepulseenergi:
 			repulseenergi = maxrepulseenergi
+	
+	if position.x > 3000:
+		position.x = -3000
+	
+	if position.x < -3000:
+		position.x = 3000
+	
+	if position.y > 3000:
+		position.y = -3000
+	
+	if position.y < -3000:
+		position.y = 3000
 
 
 #Gravity

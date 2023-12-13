@@ -28,3 +28,6 @@ func _process(delta):
 	var ff = floor(player.fuel/player.maxfuel*48.0)
 	fuelmeter.set_frame(ff)
 	fuelmeter.position = Vector2(screensize.x-110, 500)
+	
+	if player.health < 0 or player.health == 0:
+		queue_free()

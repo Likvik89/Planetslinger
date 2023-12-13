@@ -29,10 +29,10 @@ tile_set = SubResource("TileSet_ild0a")
 format = 2
 
 [node name="TextureRect" type="TextureRect" parent="Background(s)"]
-offset_left = -3848.0
-offset_top = -3674.0
-offset_right = 3942.0
-offset_bottom = 3847.0
+offset_left = -4603.0
+offset_top = -4415.0
+offset_right = 4897.0
+offset_bottom = 4474.0
 texture = ExtResource("2_iutna")
 stretch_mode = 1
 
@@ -43,20 +43,20 @@ lock_rotation = true
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(0, -3244)
+position = Vector2(-456, -3600)
 shape = SubResource("RectangleShape2D_ld176")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(4, 3258)
+position = Vector2(-281, 3620)
 shape = SubResource("RectangleShape2D_ld176")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(3164, -9)
+position = Vector2(3292, 76)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ld176")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(-3338, -2)
+position = Vector2(-4023, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ld176")
 
@@ -66,5 +66,5 @@ shape = SubResource("RectangleShape2D_ld176")
 unique_name_in_owner = true
 position = Vector2(-3, 0)
 
-[node name="UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
+[node name="Gameplay UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
 unique_name_in_owner = true

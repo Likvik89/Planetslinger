@@ -3,6 +3,7 @@ extends Node2D
 @export var planet : PackedScene
 var spawnamount = randi_range(10,20)
 
+
 func spawn():
 	var spawn = planet.instantiate()
 	var spawndistance = randi_range(500.0,2700.0)
