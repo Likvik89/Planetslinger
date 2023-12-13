@@ -12,12 +12,12 @@ const rotationspeed = 250.0
 var maxmass = startmass*4
 
 #Boosting variables
-@export var maxfuel := 200
-var fuel = 200
+@export var maxfuel := 200.0
+var fuel = 200.0
 
 #Repulsion variables
-@export var maxrepulseenergi := 400
-var repulseenergi = 400
+@export var maxrepulseenergi := 400.0
+var repulseenergi = 400.0
 var repulseenergirecovery = 1
 
 #Combat variables
@@ -41,8 +41,7 @@ func _on_area_2d_body_entered(body):
 
 #Repulsing
 func _process(delta):
-	print("Player", health)
-	#print("garvity", self.mass)
+	
 	if health < 0:
 		queue_free()
 	

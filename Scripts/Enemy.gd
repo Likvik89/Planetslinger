@@ -2,6 +2,7 @@ extends RigidBody2D
 
 @export var G = 1000  # Gravitational constant
 @export var health = 400
+@export var explosion : PackedScene
 
 #Movement variables
 var player
@@ -32,6 +33,7 @@ func shoot():
 	get_tree().root.add_child(prjctl)
 
 #Making sure that it doesn't shoot while biting
+#Dying
 func _process(delta):
 	if player != null:
 		var player_distance = position.distance_to(player.position)
@@ -41,10 +43,13 @@ func _process(delta):
 				cooldown = firingspeed
 			else:
 				cooldown -= delta
+		#Dying
 		if health < 0:
 			Score.score += 300
+			var kapow = explosion.instantiate()
+			kapow.position = self.position
+			get_tree().root.add_child(kapow)
 			queue_free()
-			
 
 #Gravity/movement
 func _integrate_forces(state):
