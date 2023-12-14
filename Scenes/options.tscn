@@ -29,5 +29,6 @@ horizontal_alignment = 1
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
