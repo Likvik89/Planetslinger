@@ -23,6 +23,21 @@ func _on_hurtbox_body_entered(body):
 	if body.is_in_group('planets') and body != self:
 		health -= Vector2((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length()
 
+func _process(delta):
+	
+	if position.x > 3000:
+		position.x = -3000
+	
+	if position.x < -3000:
+		position.x = 3000
+	
+	if position.y > 3000:
+		position.y = -3000
+	
+	if position.y < -3000:
+		position.y = 3000
+
+
 #Gravity
 func _integrate_forces(state):
 	var bodies = get_tree().get_nodes_in_group("planets")
