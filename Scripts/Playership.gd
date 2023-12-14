@@ -21,7 +21,7 @@ var repulseenergi = 400.0
 var repulseenergirecovery = 1
 
 #Combat variables
-var health = 1.0
+var health = 99999.0
 @export var maxhealth = 99999.0
 
 
@@ -44,10 +44,13 @@ func _on_area_2d_body_entered(body):
 func _process(delta):
 	
 	if health < 0 or health == 0:
-		#var gameover = death.instantiate()
-		#get_tree().root.add_child(gameover)
-		#get_tree().change_scene_to_file("res://Scenes/gameover_UI.tscn")
+		
 		queue_free()
+	
+	if Input.is_action_just_pressed("move_forward"):
+		$zoom.play()
+	else:
+		$zoom.stop()
 	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):

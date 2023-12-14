@@ -849,6 +849,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hktvm")
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_p0wfi")
@@ -868,12 +869,13 @@ position = Vector2(1070, 77)
 sprite_frames = SubResource("SpriteFrames_mljn4")
 
 [node name="health o\' meter" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(849, 141)
+position = Vector2(1064, 373)
 sprite_frames = SubResource("SpriteFrames_3wle2")
 
 [node name="energy batterie" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(956, 127)
+position = Vector2(1088, 251)
 sprite_frames = SubResource("SpriteFrames_0jkur")
 
 [node name="fuel meter" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(1056, 443)
 sprite_frames = SubResource("SpriteFrames_atqkt")
