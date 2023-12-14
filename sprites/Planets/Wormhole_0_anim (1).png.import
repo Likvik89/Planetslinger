@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m1as85at2ux2"
-path="res://.godot/imported/Wormhole_0_anim.png-a75f1e823e6c60b28a65aa541f578b62.ctex"
+uid="uid://1olpu8qbhgkf"
+path="res://.godot/imported/Wormhole_0_anim (1).png-23a410dc7095a128a2096aa1a6234d7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Planets/Wormhole_0_anim.png"
-dest_files=["res://.godot/imported/Wormhole_0_anim.png-a75f1e823e6c60b28a65aa541f578b62.ctex"]
+source_file="res://sprites/Planets/Wormhole_0_anim (1).png"
+dest_files=["res://.godot/imported/Wormhole_0_anim (1).png-23a410dc7095a128a2096aa1a6234d7d.ctex"]
 
 [params]
 
