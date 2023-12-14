@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gy6v4c1b5mc5"
-path="res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"
+uid="uid://bux1o7v2gy6xd"
+path="res://.godot/imported/Ice_planet.png-3551624cd53a58baf349899aeb700d55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Planets/Gasgiant.png"
-dest_files=["res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"]
+source_file="res://sprites/Playeranimations/Ice_planet.png"
+dest_files=["res://.godot/imported/Ice_planet.png-3551624cd53a58baf349899aeb700d55.ctex"]
 
 [params]
 
