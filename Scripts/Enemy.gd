@@ -19,6 +19,17 @@ func start(_position, _direction):
 	rotation = _direction
 	position = _position
 
+var being_absorbed = false
+#being absorbed by a black hole
+
+func get_absorbed(pos):
+	var tween = get_tree().create_tween()
+	var tween2 = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(), 1)
+	tween2.tween_property(self, "position", pos, 1)
+	tween.tween_callback(queue_free)
+
+
 #Collision damage
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('planets') and body != self:

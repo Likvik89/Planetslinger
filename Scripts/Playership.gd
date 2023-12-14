@@ -33,6 +33,15 @@ var health = 99999.0
 func take_damage(damage):
 	health -= damage
 
+var being_absorbed = false
+#being absorbed by a black hole
+func get_absorbed(pos):
+	var tween = get_tree().create_tween()
+	var tween2 = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(), 1)
+	tween2.tween_property(self, "position", pos, 1)
+	tween.tween_callback(queue_free)
+
 
 #Collision damage
 func _on_area_2d_body_entered(body):

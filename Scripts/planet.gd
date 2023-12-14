@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var G = 1000  # Gravitational constant
 @export var health = 500000
 @onready var anim = $AnimatedSprite2D
-
+@export var bl : PackedScene
 
 #Generating a random image for the planet
 func _ready():
@@ -24,6 +24,8 @@ func _on_hurtbox_body_entered(body):
 		health -= Vector2((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length()
 
 func _process(delta):
+	
+	
 	
 	if position.x > 3000:
 		position.x = -3000
@@ -49,3 +51,24 @@ func _integrate_forces(state):
 			var force = direction * force_magnitude # combine force magnitude and direction
 			apply_central_force(force)
 
+
+var being_absorbed = false
+func _on_blackholemaker_body_entered(body):
+	var total_mass = 0
+	var overlaps = $blackholemaker.get_overlapping_bodies()
+	for thing in overlaps:
+		if thing.is_in_group("planets"):
+			if not thing.being_absorbed:
+				total_mass += thing.mass
+	if total_mass > 1000:
+		being_absorbed = true
+		var hol = bl.instantiate()
+		hol.position = position
+		$"../".add_child(hol)
+
+func get_absorbed(pos):
+	var tween = get_tree().create_tween()
+	var tween2 = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2(), 1)
+	tween2.tween_property(self, "position", pos, 1)
+	tween.tween_callback(queue_free)

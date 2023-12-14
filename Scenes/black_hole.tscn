@@ -428,13 +428,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 60.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4avnw"]
-radius = 25.0
+radius = 73.0274
 
-[node name="Black hole" type="RigidBody2D" groups=["planets"]]
+[node name="Black hole" type="RigidBody2D" groups=["blackholes", "bodies"]]
 mass = 0.01
 gravity_scale = 0.0
 script = ExtResource("1_x6074")
@@ -442,9 +442,10 @@ script = ExtResource("1_x6074")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_em81x")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="absorb" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="absorb"]
 shape = SubResource("CircleShape2D_4avnw")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="absorb" to="." method="_on_absorb_body_entered"]
+[connection signal="body_entered" from="absorb" to="." method="_on_area_2d_body_entered"]
