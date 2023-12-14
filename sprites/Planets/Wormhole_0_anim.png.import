@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gy6v4c1b5mc5"
-path="res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"
+uid="uid://m1as85at2ux2"
+path="res://.godot/imported/Wormhole_0_anim.png-a75f1e823e6c60b28a65aa541f578b62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Planets/Gasgiant.png"
-dest_files=["res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"]
+source_file="res://sprites/Planets/Wormhole_0_anim.png"
+dest_files=["res://.godot/imported/Wormhole_0_anim.png-a75f1e823e6c60b28a65aa541f578b62.ctex"]
 
 [params]
 
