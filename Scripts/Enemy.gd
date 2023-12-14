@@ -27,7 +27,7 @@ func _on_area_2d_body_entered(body):
 	
 #Shooting
 func shoot():
-	
+	$pew.play()
 	var prjctl = bullet.instantiate()
 	prjctl.start($Marker2D.global_position, rotation)
 	get_tree().root.add_child(prjctl)

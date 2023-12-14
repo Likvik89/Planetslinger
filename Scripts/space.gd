@@ -16,6 +16,7 @@ func spawn():
 
 
 func _ready():
+	$"Background music".play()
 	for i in range(spawnamount):
 		spawn()
 

@@ -47,11 +47,6 @@ func _process(delta):
 		
 		queue_free()
 	
-	if Input.is_action_just_pressed("move_forward"):
-		$zoom.play()
-	else:
-		$zoom.stop()
-	
 	#Repulsing
 	if Input.is_action_pressed("Repulse"):
 		if repulseenergi == maxrepulseenergi:
@@ -117,6 +112,12 @@ func _integrate_forces(delta):
 	if Input.is_action_pressed("move_back"):
 		var direction = Vector2(cos(rotation), sin(rotation))  # Calculate backward direction based on rotation
 		apply_central_impulse(-direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
+	
+	
+	if Input.is_action_just_pressed("move_forward"):
+		$exaust.play()
+	elif Input.is_action_just_released("move_forward"):
+		$exaust.stop()
 	
 	
 	#Boosting

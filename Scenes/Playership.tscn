@@ -216,9 +216,8 @@ mass = 700.0
 gravity_scale = 0.0
 script = ExtResource("1_w6fab")
 
-[node name="zoom" type="AudioStreamPlayer" parent="."]
+[node name="exaust" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xxwt1")
-volume_db = 1.0
 
 [node name="exhaust" type="AnimatedSprite2D" parent="."]
 position = Vector2(-13, 0)
