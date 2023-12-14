@@ -2,7 +2,8 @@ extends Node2D
 
 @export var planet : PackedScene
 var spawnamount = randi_range(10,20)
-
+@onready var gameoverscreen = $Enemyspawner/Gameover
+@onready var player = $Enemyspawner/playership
 
 func spawn():
 	var spawn = planet.instantiate()
@@ -14,15 +15,15 @@ func spawn():
 	spawn.position = spawnposition
 	add_child(spawn)
 
-
 func _ready():
 	$"Background music".play()
 	for i in range(spawnamount):
 		spawn()
 
 
-
-
+func _process(delta):
+	if player == null:
+		gameoverscreen.visible = true
 
 
 
@@ -38,7 +39,3 @@ func x_ready():
 				sum += (body.mass * unitVector) / distance.length_squared()
 			target.linear_velocity += body.mass * sum
 
-
-#func _process(delta):
-	#calculate_gravity_force()
-	

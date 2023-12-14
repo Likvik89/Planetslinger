@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ceidb1v0s1485"]
+[gd_scene load_steps=12 format=3 uid="uid://ceidb1v0s1485"]
 
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
 [ext_resource type="Texture2D" uid="uid://0jynubnk5guv" path="res://sprites/Backgrounds/Space Background.png" id="2_iutna"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2l0lmddivget" path="res://Scenes/enemyspawner.tscn" id="5_pritn"]
 [ext_resource type="PackedScene" uid="uid://gbcf4kpqno52" path="res://Scenes/Gameplay_UI.tscn" id="6_piu2p"]
 [ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="6_soul1"]
+[ext_resource type="PackedScene" uid="uid://bt6jnkqbp4f0y" path="res://Scenes/gameover.tscn" id="7_fx4ws"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n38p"]
 texture = ExtResource("2_iutna")
@@ -71,3 +72,6 @@ unique_name_in_owner = true
 
 [node name="playership" parent="Enemyspawner" instance=ExtResource("6_soul1")]
 unique_name_in_owner = true
+
+[node name="Gameover" parent="Enemyspawner" instance=ExtResource("7_fx4ws")]
+visible = false
