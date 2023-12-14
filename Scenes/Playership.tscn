@@ -211,7 +211,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="playership" type="RigidBody2D" groups=["planets", "player"]]
+[node name="playership" type="RigidBody2D" groups=["bodies", "player"]]
 mass = 700.0
 gravity_scale = 0.0
 script = ExtResource("1_w6fab")

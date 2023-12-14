@@ -50,11 +50,24 @@ func _process(delta):
 			kapow.position = self.position
 			get_tree().root.add_child(kapow)
 			queue_free()
+	
+	if position.x > 3000:
+		position.x = -3000
+	
+	if position.x < -3000:
+		position.x = 3000
+	
+	if position.y > 3000:
+		position.y = -3000
+	
+	if position.y < -3000:
+		position.y = 3000
+
 
 #Gravity/movement
 func _integrate_forces(state):
 	#Gravity
-	var bodies = get_tree().get_nodes_in_group("planets")
+	var bodies = get_tree().get_nodes_in_group("bodies")
 	for body in bodies:
 		if body != self:
 			var distance = self.global_position.distance_to(body.global_position)
