@@ -26,6 +26,7 @@ planet = ExtResource("3_1lsuq")
 
 [node name="Background music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qkqeo")
+bus = &"Music"
 
 [node name="Background(s)" type="Node2D" parent="."]
 

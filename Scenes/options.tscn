@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4k64qjogm4bp"]
+[gd_scene load_steps=3 format=3 uid="uid://c4k64qjogm4bp"]
 
 [ext_resource type="Script" path="res://Scripts/options.gd" id="1_273n7"]
+[ext_resource type="PackedScene" uid="uid://ddaypjwvd7xgb" path="res://Scenes/volume_slider.tscn" id="2_w7jj4"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -26,6 +27,30 @@ Mousewheel down = gravity down
 Left shift = boost
 Spacebar = repulse"
 horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Master volume"
+
+[node name="master volume" parent="VBoxContainer" instance=ExtResource("2_w7jj4")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="music volume" parent="VBoxContainer" instance=ExtResource("2_w7jj4")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sound effects volume"
+
+[node name="sfx volume" parent="VBoxContainer" instance=ExtResource("2_w7jj4")]
+layout_mode = 2
+bus_name = "SFX"
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2

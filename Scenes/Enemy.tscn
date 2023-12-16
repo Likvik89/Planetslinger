@@ -29,6 +29,7 @@ bullet = ExtResource("2_guuww")
 
 [node name="pew" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_p864e")
+bus = &"SFX"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	$ded.play()
+	
 	%Score.text = str("Score=",Score.score)
 	if Score.score > Score.highscore:
 		Score.highscore = Score.score

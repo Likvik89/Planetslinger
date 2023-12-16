@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c4hjwmhqnddkj" path="res://sprites/Planets/Planet1.png" id="2_47rgj"]
 [ext_resource type="PackedScene" uid="uid://cd0tri2xdb4vs" path="res://Scenes/black_hole.tscn" id="2_mbujd"]
 [ext_resource type="Texture2D" uid="uid://gqvnsnr1qi5r" path="res://sprites/Planets/Earth_like1.png" id="3_16ln4"]
-[ext_resource type="Texture2D" uid="uid://bux1o7v2gy6xd" path="res://sprites/Planets/Ice_planet.png" id="4_opyem"]
+[ext_resource type="Texture2D" uid="uid://bux1o7v2gy6xd" path="res://sprites/Playeranimations/Ice_planet.png" id="4_opyem"]
 [ext_resource type="Texture2D" uid="uid://dkigas8k746ag" path="res://sprites/Planets/Lava_planet.png" id="5_rfm7y"]
 [ext_resource type="Texture2D" uid="uid://dq04cffs0o34h" path="res://sprites/Planets/Mars.png" id="6_mrqqh"]
-[ext_resource type="Texture2D" uid="uid://bmsegauc6dabo" path="res://sprites/Planets/Gasgiant.png" id="7_ix1n4"]
+[ext_resource type="Texture2D" uid="uid://bmsegauc6dabo" path="res://sprites/Playeranimations/Gasgiant.png" id="7_ix1n4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6qgmy"]
 radius = 50.0

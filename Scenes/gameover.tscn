@@ -15,6 +15,7 @@ script = ExtResource("1_0ukky")
 
 [node name="ded" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_yagta")
+bus = &"SFX"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
