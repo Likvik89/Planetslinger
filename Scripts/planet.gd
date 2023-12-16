@@ -5,7 +5,7 @@ extends RigidBody2D
 @onready var anim = $AnimatedSprite2D
 @export var bl : PackedScene
 
-#Generating a random image for the planet
+#Generating a random image, and size for the planet
 func _ready():
 	var planetSprites = anim.sprite_frames.get_animation_names()
 	var randomIndex = randi() % planetSprites.size()
@@ -23,9 +23,8 @@ func _on_hurtbox_body_entered(body):
 	if body.is_in_group('planets') and body != self:
 		health -= Vector2((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length()
 
+#looping
 func _process(delta):
-	
-	
 	
 	if position.x > 3000:
 		position.x = -3000
@@ -52,6 +51,7 @@ func _integrate_forces(state):
 			apply_central_force(force)
 
 
+#spawnig black holes
 var being_absorbed = false
 func _on_blackholemaker_body_entered(body):
 	var total_mass = 0
@@ -66,6 +66,8 @@ func _on_blackholemaker_body_entered(body):
 		hol.position = position
 		$"../".add_child(hol)
 
+
+#being absorbed by a black hole
 func get_absorbed(pos):
 	var tween = get_tree().create_tween()
 	var tween2 = get_tree().create_tween()
