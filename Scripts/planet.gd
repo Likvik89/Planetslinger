@@ -7,11 +7,24 @@ extends RigidBody2D
 
 #Generating a random image, and size for the planet
 func _ready():
+	
+	var random_number = randi() % 100 + 1
+	#changeSize(random_number)
+	
 	var planetSprites = anim.sprite_frames.get_animation_names()
 	var randomIndex = randi() % planetSprites.size()
 	var randomPlanet = planetSprites[randomIndex]
 	anim.play(randomPlanet)
 
+
+
+#func _ready():
+#	var random_number = randi() % 100 + 1
+#	changeSize(random_number)
+	
+func changeSize(new_size):
+	for child in get_children():
+		child.scale = Vector2(new_size, new_size)
 
 #Taking damge
 func take_damage(damage):

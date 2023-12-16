@@ -64,7 +64,7 @@ func _process(delta):
 			else:
 				cooldown -= delta
 		#Dying
-		if health < 0:
+		if health <= 0:
 			Score.score += 300
 			var kapow = explosion.instantiate()
 			kapow.position = self.position
