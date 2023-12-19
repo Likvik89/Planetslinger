@@ -51,6 +51,7 @@ func _on_area_2d_body_entered(body):
 
 
 #Repulsing
+#"Looping"
 func _process(delta):
 	
 	if health < 0 or health == 0:

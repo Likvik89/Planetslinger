@@ -15,22 +15,29 @@ func _ready():
 
 
 func spawn():
-	var spawn 
+	var spawn
 	
+	#selecting what to spawn
 	var spawnindex = randi_range(0,1)
-	
 	if spawnindex == 0:
 		spawn = planet.instantiate()
 	if spawnindex == 1:
 		spawn = enemy.instantiate()
 	
+	#selecting "launch angle"
+	var spawnangle = randi_range(-45,45)
+	var direction = Vector2(cos(spawnangle), sin(spawnangle))
+	var spawnposition = Vector2(direction*150)
 	
 	
-	spawn.position = self.position
 	
+	spawn.position = position
 	if spawn == enemy:
 		spawn.player = player
-	add_child(spawn)
+	
+	
+	
+	$"../".add_child(spawn)
 	
 
 func _process(delta):

@@ -74,9 +74,9 @@ unique_name_in_owner = true
 
 [node name="playership" parent="Enemyspawner" instance=ExtResource("6_soul1")]
 unique_name_in_owner = true
+position = Vector2(-141, 97)
 
 [node name="Gameover" parent="Enemyspawner" instance=ExtResource("7_fx4ws")]
 visible = false
 
 [node name="Wormhole" parent="." instance=ExtResource("9_g4mt4")]
-position = Vector2(279, 95)

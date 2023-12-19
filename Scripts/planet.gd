@@ -10,7 +10,7 @@ func _ready():
 	
 	var random_number = randi_range(0.5,2)
 	changeSize(random_number)
-	mass * random_number * random_number * 50
+	mass * random_number * random_number * 500
 	
 	var planetSprites = anim.sprite_frames.get_animation_names()
 	var randomIndex = randi() % planetSprites.size()
@@ -83,15 +83,6 @@ func _on_blackholemaker_body_entered(body):
 		await get_tree().process_frame
 		if can_spawn_black_hole == true:
 			$"../".add_child(hol)
-
-
-
-#node.rotation = 45.0
-#node.set_deferred("rotation", 90.0)
-##print(node.rotation) # Prints 45.0
-
-#await get_tree().process_frame
-#print(node.rotation) # Prints 90.0
 
 
 #being absorbed by a black hole
