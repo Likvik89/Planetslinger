@@ -30,3 +30,5 @@ visible = false
 position = Vector2(0, -39)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vg46y")
+
+[node name="Marker2D" type="Marker2D" parent="."]
