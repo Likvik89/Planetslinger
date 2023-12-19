@@ -21,7 +21,7 @@ var repulseenergi = 400.0
 var repulseenergirecovery = 1
 
 #Combat variables
-var health = 99999.0
+var health = 1.0
 @export var maxhealth = 99999.0
 
 
