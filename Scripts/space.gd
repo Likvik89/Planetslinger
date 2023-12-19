@@ -24,6 +24,7 @@ func make_wormhole():
 	var spawnposition = Vector2(direction*spawndistance)
 	
 	spawn.position = spawnposition
+	spawn.player = player
 	add_child(spawn)
 
 func _ready():

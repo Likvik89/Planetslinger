@@ -63,6 +63,7 @@ func _integrate_forces(state):
 
 #spawnig black holes
 var being_absorbed = false
+var can_spawn_black_hole = false
 func _on_blackholemaker_body_entered(body):
 	var total_mass = 0
 	var overlaps = $blackholemaker.get_overlapping_bodies()
@@ -78,7 +79,19 @@ func _on_blackholemaker_body_entered(body):
 		being_absorbed = true
 		var hol = bl.instantiate()
 		hol.position = position
-		$"../".add_child(hol)
+		can_spawn_black_hole = true
+		await get_tree().process_frame
+		if can_spawn_black_hole == true:
+			$"../".add_child(hol)
+
+
+
+#node.rotation = 45.0
+#node.set_deferred("rotation", 90.0)
+##print(node.rotation) # Prints 45.0
+
+#await get_tree().process_frame
+#print(node.rotation) # Prints 90.0
 
 
 #being absorbed by a black hole

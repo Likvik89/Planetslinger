@@ -26,7 +26,6 @@ func spawn():
 
 func _process(delta):
 	
-	
 	if cooldown <= 0:
 		spawn()
 		cooldown = spawnspeed + randi_range(0,2)

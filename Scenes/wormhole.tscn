@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bni7xnd8ujfis"]
+[gd_scene load_steps=6 format=3 uid="uid://bni7xnd8ujfis"]
 
 [ext_resource type="Texture2D" uid="uid://1olpu8qbhgkf" path="res://sprites/Planets/Wormhole_0_anim (1).png" id="1_bya2y"]
 [ext_resource type="Script" path="res://Scripts/wormhole.gd" id="1_j1hv8"]
+[ext_resource type="PackedScene" uid="uid://cbw8g3l4vl6gq" path="res://Scenes/Enemy.tscn" id="2_b7hva"]
+[ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_8hj80"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg46y"]
 radius = 107.0
@@ -9,13 +11,17 @@ height = 340.0
 
 [node name="Wormhole" type="Node2D"]
 script = ExtResource("1_j1hv8")
+enemy = ExtResource("2_b7hva")
+planet = ExtResource("3_8hj80")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(234, 235)
 texture = ExtResource("1_bya2y")
 
 [node name="teleporter" type="Area2D" parent="."]
 
 [node name="teleporter_area" type="CollisionShape2D" parent="teleporter"]
+visible = false
 position = Vector2(0, -39)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_vg46y")

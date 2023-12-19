@@ -1,7 +1,12 @@
 extends Node2D
 
 
+@export var enemy : PackedScene
+@export var planet : PackedScene
+var player
 
+var spawnspeed = 10
+var cooldown = 0
 
 
 func _ready():
@@ -9,6 +14,30 @@ func _ready():
 	rotate(r)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func spawn():
+	var spawn 
+	
+	var spawnindex = randi_range(0,1)
+	
+	if spawnindex == 0:
+		spawn = planet.instantiate()
+	if spawnindex == 1:
+		spawn = enemy.instantiate()
+	
+	
+	
+	spawn.position = self.position
+	
+	if spawn == enemy:
+		spawn.player = player
+	add_child(spawn)
+	
+
 func _process(delta):
-	pass
+	
+	if cooldown <= 0:
+		spawn()
+		cooldown = spawnspeed + randi_range(0,2)
+	else:
+		cooldown -= delta
+
