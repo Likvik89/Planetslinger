@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bni7xnd8ujfis"]
+[gd_scene load_steps=4 format=3 uid="uid://bni7xnd8ujfis"]
 
 [ext_resource type="Texture2D" uid="uid://1olpu8qbhgkf" path="res://sprites/Planets/Wormhole_0_anim (1).png" id="1_bya2y"]
 [ext_resource type="Script" path="res://Scripts/wormhole.gd" id="1_j1hv8"]
-[ext_resource type="Texture2D" uid="uid://bb22yfwt002mp" path="res://sprites/Backgrounds/Space Background Winter Wonder.png" id="1_qtal6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg46y"]
 radius = 107.0
@@ -10,9 +9,6 @@ height = 340.0
 
 [node name="Wormhole" type="Node2D"]
 script = ExtResource("1_j1hv8")
-
-[node name="SpaceBackgroundWinterWonder" type="Sprite2D" parent="."]
-texture = ExtResource("1_qtal6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bya2y")

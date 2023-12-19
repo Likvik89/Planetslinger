@@ -1,12 +1,23 @@
 extends Node2D
 
 @export var planet : PackedScene
+@export var wormhole : PackedScene
 var spawnamount = randi_range(10,20)
 @onready var gameoverscreen = $Enemyspawner/Gameover
 @onready var player = $Enemyspawner/playership
 
 func spawn():
 	var spawn = planet.instantiate()
+	var spawndistance = randi_range(500.0,2700.0)
+	var spawnangle = randi_range(0.0,360.0)
+	var direction = Vector2(cos(spawnangle), sin(spawnangle))
+	var spawnposition = Vector2(direction*spawndistance)
+	
+	spawn.position = spawnposition
+	add_child(spawn)
+
+func make_wormhole():
+	var spawn = wormhole.instantiate()
 	var spawndistance = randi_range(500.0,2700.0)
 	var spawnangle = randi_range(0.0,360.0)
 	var direction = Vector2(cos(spawnangle), sin(spawnangle))
@@ -22,8 +33,6 @@ func _ready():
 
 
 func _process(delta):
-	
-	
 	
 	if player == null:
 		gameoverscreen.visible = true

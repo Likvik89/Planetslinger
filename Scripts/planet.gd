@@ -10,7 +10,7 @@ func _ready():
 	
 	var random_number = randi_range(0.5,2)
 	changeSize(random_number)
-	mass * random_number * random_number * random_number
+	mass * random_number * random_number * 50
 	
 	var planetSprites = anim.sprite_frames.get_animation_names()
 	var randomIndex = randi() % planetSprites.size()
@@ -66,10 +66,14 @@ var being_absorbed = false
 func _on_blackholemaker_body_entered(body):
 	var total_mass = 0
 	var overlaps = $blackholemaker.get_overlapping_bodies()
+	
+	#checking to make a black hole
 	for thing in overlaps:
 		if thing.is_in_group("planets"):
 			if not thing.being_absorbed:
 				total_mass += thing.mass
+	
+	#making a black hole
 	if total_mass > self.mass * 2:
 		being_absorbed = true
 		var hol = bl.instantiate()
