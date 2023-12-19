@@ -76,3 +76,6 @@ unique_name_in_owner = true
 
 [node name="Gameover" parent="Enemyspawner" instance=ExtResource("7_fx4ws")]
 visible = false
+
+[node name="Planet" parent="." instance=ExtResource("3_1lsuq")]
+position = Vector2(152, 48)

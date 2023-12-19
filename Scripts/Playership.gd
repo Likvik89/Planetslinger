@@ -31,7 +31,8 @@ var health = 99999.0
 
 #Taking damge
 func take_damage(damage):
-	health -= damage
+	if damage > 49:
+		health -= damage
 
 var being_absorbed = false
 #being absorbed by a black hole

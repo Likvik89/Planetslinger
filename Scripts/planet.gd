@@ -8,8 +8,9 @@ extends RigidBody2D
 #Generating a random image, and size for the planet
 func _ready():
 	
-	var random_number = randi() % 100 + 1
-	#changeSize(random_number)
+	var random_number = randi_range(0.5,2)
+	changeSize(random_number)
+	mass * random_number * random_number * random_number
 	
 	var planetSprites = anim.sprite_frames.get_animation_names()
 	var randomIndex = randi() % planetSprites.size()
@@ -18,10 +19,6 @@ func _ready():
 
 
 
-#func _ready():
-#	var random_number = randi() % 100 + 1
-#	changeSize(random_number)
-	
 func changeSize(new_size):
 	for child in get_children():
 		child.scale = Vector2(new_size, new_size)
@@ -73,7 +70,7 @@ func _on_blackholemaker_body_entered(body):
 		if thing.is_in_group("planets"):
 			if not thing.being_absorbed:
 				total_mass += thing.mass
-	if total_mass > 1000:
+	if total_mass > self.mass * 2:
 		being_absorbed = true
 		var hol = bl.instantiate()
 		hol.position = position

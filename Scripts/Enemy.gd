@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 @export var G = 1000  # Gravitational constant
-@export var health = 400
+@export var health = 350
 @export var explosion : PackedScene
 
 #Movement variables
@@ -13,15 +13,6 @@ var player
 @export var bullet : PackedScene
 @export var firingspeed = 5
 @export var cooldown = 0
-
-
-#func _ready():
-#	var random_number = randi() % 100 + 1
-#	changeSize(random_number)
-	
-#func changeSize(new_size):
-	#for child in get_children():
-	#	child.scale = Vector2(new_size, new_size)
 
 
 func start(_position, _direction):
