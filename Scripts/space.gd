@@ -22,6 +22,9 @@ func _ready():
 
 
 func _process(delta):
+	
+	
+	
 	if player == null:
 		gameoverscreen.visible = true
 		$"Enemyspawner/Gameover/ded".play()

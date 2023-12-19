@@ -3,7 +3,7 @@ extends Node2D
 @export var enemy : PackedScene
 @onready var player = $playership
 var cooldown = 0
-var spawnspeed = 5
+var spawnspeed = 6
 
 
 #func _ready():
@@ -29,6 +29,6 @@ func _process(delta):
 	
 	if cooldown <= 0:
 		spawn()
-		cooldown = spawnspeed
+		cooldown = spawnspeed + randi_range(0,2)
 	else:
 		cooldown -= delta

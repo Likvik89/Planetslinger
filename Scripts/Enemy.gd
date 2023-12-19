@@ -51,9 +51,9 @@ func _process(delta):
 		if player_distance > 30:
 			if cooldown <= 0:
 				shoot()
-				cooldown = firingspeed
+				cooldown = firingspeed + randf_range(0,2)
 			else:
-				cooldown -= delta
+				cooldown -= delta 
 		#Dying
 		if health <= 0:
 			Score.score += 300
