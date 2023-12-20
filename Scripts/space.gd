@@ -6,6 +6,8 @@ var spawnamount = randi_range(10,20)
 @onready var gameoverscreen = $Enemyspawner/Gameover
 @onready var player = $Enemyspawner/playership
 
+
+
 func spawn():
 	var spawn = planet.instantiate()
 	var spawndistance = randi_range(500.0,2700.0)
@@ -33,9 +35,15 @@ func _ready():
 		spawn()
 
 
+
 func _process(delta):
+	if player != null:
+		Score.playerposition = player.position
 	
 	if player == null:
+		$Camera2D.position = Score.playerposition
+		$Camera2D.enabled = true
+		gameoverscreen.position = Score.playerposition
 		gameoverscreen.visible = true
 		$"Enemyspawner/Gameover/ded".play()
 

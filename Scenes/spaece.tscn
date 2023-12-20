@@ -29,6 +29,10 @@ planet = ExtResource("3_1lsuq")
 stream = ExtResource("3_qkqeo")
 bus = &"Music"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+enabled = false
+
 [node name="Background(s)" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Background(s)"]
@@ -71,6 +75,7 @@ shape = SubResource("RectangleShape2D_ld176")
 
 [node name="Gameplay UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
 unique_name_in_owner = true
+layout_mode = 1
 
 [node name="playership" parent="Enemyspawner" instance=ExtResource("6_soul1")]
 unique_name_in_owner = true
@@ -78,5 +83,10 @@ position = Vector2(-141, 97)
 
 [node name="Gameover" parent="Enemyspawner" instance=ExtResource("7_fx4ws")]
 visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="Wormhole" parent="." instance=ExtResource("9_g4mt4")]
