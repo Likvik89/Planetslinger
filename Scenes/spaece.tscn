@@ -71,6 +71,11 @@ position = Vector2(-4023, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ld176")
 
+[node name="Celestial bodies" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Wormhole" parent="Celestial bodies" instance=ExtResource("9_g4mt4")]
+
 [node name="Enemyspawner" parent="." instance=ExtResource("5_pritn")]
 
 [node name="Gameplay UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
@@ -88,5 +93,3 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-
-[node name="Wormhole" parent="." instance=ExtResource("9_g4mt4")]
