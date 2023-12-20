@@ -447,5 +447,5 @@ sprite_frames = SubResource("SpriteFrames_em81x")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="absorb"]
 shape = SubResource("CircleShape2D_4avnw")
 
-[connection signal="body_entered" from="absorb" to="." method="_on_absorb_body_entered"]
 [connection signal="body_entered" from="absorb" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="absorb" to="." method="_on_absorb_body_entered"]
