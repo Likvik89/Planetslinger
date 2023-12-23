@@ -4,7 +4,7 @@ extends Node2D
 @export var wormhole : PackedScene
 var spawnamount = randi_range(10,20)
 var wormamount = randi_range(2,5)
-@onready var gameoverscreen = $Enemyspawner/CanvasLayer/Gameover
+@onready var gameoverscreen = $Enemyspawner/Camera2D/CanvasLayer/Gameover
 @onready var player = $Enemyspawner/playership
 
 
@@ -43,12 +43,11 @@ func _process(delta):
 		Score.playerposition = player.position
 	
 	if player == null:
-		$Camera2D.position = Score.playerposition
-		$Camera2D.enabled = true
-		gameoverscreen.position = Score.playerposition
+		%Camera2D.position = Score.playerposition
+		%Camera2D.enabled = true
 		$CanvasModulate.visible = true
 		gameoverscreen.visible = true
-		$"Enemyspawner/CanvasLayer/Gameover/ded".play()
+		$"Enemyspawner/Camera2D/CanvasLayer/Gameover/ded".play()
 
 
 

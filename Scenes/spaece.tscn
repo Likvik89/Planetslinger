@@ -33,10 +33,6 @@ bus = &"Music"
 visible = false
 color = Color(0.364706, 0.364706, 0.364706, 0.752941)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-enabled = false
-
 [node name="Background(s)" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Background(s)"]
@@ -90,9 +86,15 @@ layout_mode = 1
 unique_name_in_owner = true
 position = Vector2(-141, 97)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Enemyspawner"]
+[node name="Camera2D" type="Camera2D" parent="Enemyspawner"]
+unique_name_in_owner = true
+visible = false
+enabled = false
 
-[node name="Gameover" parent="Enemyspawner/CanvasLayer" instance=ExtResource("7_fx4ws")]
+[node name="CanvasLayer" type="CanvasLayer" parent="Enemyspawner/Camera2D"]
+
+[node name="Gameover" parent="Enemyspawner/Camera2D/CanvasLayer" instance=ExtResource("7_fx4ws")]
+unique_name_in_owner = true
 visible = false
 offset_left = 0.0
 offset_top = 0.0
