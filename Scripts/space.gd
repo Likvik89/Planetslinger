@@ -25,6 +25,10 @@ func make_wormhole():
 	var spawnangle = randi_range(0.0,360.0)
 	var direction = Vector2(cos(spawnangle), sin(spawnangle))
 	var spawnposition = Vector2(direction*spawndistance)
+	var wormholes =  $"Celestial bodies/Wormhole/Seperator".get_overlapping_bodies()
+	for wormhole in wormholes:
+		if wormhole == self:
+			
 	
 	spawn.position = spawnposition
 	spawn.player = player
