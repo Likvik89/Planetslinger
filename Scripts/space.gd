@@ -3,7 +3,7 @@ extends Node2D
 @export var planet : PackedScene
 @export var wormhole : PackedScene
 var spawnamount = randi_range(10,20)
-var wormamount = randi_range(2,5)
+
 @onready var gameoverscreen = $Enemyspawner/Camera2D/CanvasLayer/Gameover
 @onready var player = $Enemyspawner/playership
 
@@ -25,10 +25,7 @@ func make_wormhole():
 	var spawnangle = randi_range(0.0,360.0)
 	var direction = Vector2(cos(spawnangle), sin(spawnangle))
 	var spawnposition = Vector2(direction*spawndistance)
-	var wormholes =  $"Celestial bodies/Wormhole/Seperator".get_overlapping_bodies()
-	for wormhole in wormholes:
-		if wormhole == self:
-			
+	
 	
 	spawn.position = spawnposition
 	spawn.player = player
@@ -38,7 +35,8 @@ func _ready():
 	$"Background music".play()
 	for i in range(spawnamount):
 		spawn()
-	
+	for i in Score.wormamount:
+		make_wormhole()
 
 
 

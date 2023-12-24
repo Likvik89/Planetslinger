@@ -10,6 +10,10 @@ var cooldown = 0
 
 
 func _ready():
+	for wormhole in $Seperator.get_overlapping_bodies():
+		if wormhole != self:
+			Score.wormamount += 1
+			queue_free()
 	var r = randf_range(0.0, 360.0)
 	rotate(r)
 
