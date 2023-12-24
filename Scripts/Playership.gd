@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var THRUST_FORCE = 25  # The force applied when moving forward
 var thrust_force_multiplier = 10000
 const rotationspeed = 250.0
+var maxspeed = 0
 
 #Gravity variables
 @export var G = 1000  # Gravitational constant
@@ -48,44 +49,6 @@ func get_absorbed(pos):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('planets') and body != self:
 		take_damage(((self.angular_velocity*self.linear_velocity)-(body.angular_velocity*self.linear_velocity)).length())
-
-
-#Repulsing
-#"Looping"
-func _process(delta):
-	
-	if health < 0 or health == 0:
-		
-		queue_free()
-	
-	#Repulsing
-	if Input.is_action_pressed("Repulse"):
-		if repulseenergi == maxrepulseenergi:
-			anim.play("repulse")
-			for body in $"Repulsion field".get_overlapping_bodies():
-				if body != self:
-					var distance = self.global_position.distance_to(body.global_position)
-					var direction = (body.global_position - self.global_position).normalized()
-					body.apply_central_impulse((direction * 300000 ))
-					repulseenergi = 0
-	
-	
-	if not Input.is_action_pressed("Repulse"):
-		repulseenergi += repulseenergirecovery
-		if repulseenergi > maxrepulseenergi:
-			repulseenergi = maxrepulseenergi
-	
-	if position.x > 3000:
-		position.x = -3000
-	
-	if position.x < -3000:
-		position.x = 3000
-	
-	if position.y > 3000:
-		position.y = -3000
-	
-	if position.y < -3000:
-		position.y = 3000
 
 
 #Gravity
@@ -135,16 +98,58 @@ func _integrate_forces(delta):
 	if Input.is_action_pressed("move_boost") and fuel > 0:
 		THRUST_FORCE = 50
 		exhaustanim.play("boosting")
+		maxspeed = 1600
 		if fuel >= 2:
 			fuel -=2
 	else:
 		THRUST_FORCE = 25
 		fuel += 2
+		maxspeed -= 2
 		exhaustanim.play("default")
-	
 	
 	if fuel > maxfuel:
 		fuel = maxfuel
 	if fuel < 0:
 		fuel = 0
+	
+	if maxspeed < 900:
+		maxspeed = 900
 
+
+#Repulsing
+#"Looping"
+func _process(delta):
+	
+	if health < 0 or health == 0:
+		
+		queue_free()
+	
+	#Repulsing
+	if Input.is_action_pressed("Repulse"):
+		if repulseenergi == maxrepulseenergi:
+			anim.play("repulse")
+			for body in $"Repulsion field".get_overlapping_bodies():
+				if body != self:
+					var distance = self.global_position.distance_to(body.global_position)
+					var direction = (body.global_position - self.global_position).normalized()
+					body.apply_central_impulse((direction * 300000 ))
+					repulseenergi = 0
+	if not Input.is_action_pressed("Repulse"):
+		repulseenergi += repulseenergirecovery
+		if repulseenergi > maxrepulseenergi:
+			repulseenergi = maxrepulseenergi
+	
+	#"Looping"
+	if position.x > 3000:
+		position.x = -3000
+	
+	if position.x < -3000:
+		position.x = 3000
+	
+	if position.y > 3000:
+		position.y = -3000
+	
+	if position.y < -3000:
+		position.y = 3000
+	
+	linear_velocity = linear_velocity.limit_length(maxspeed)
