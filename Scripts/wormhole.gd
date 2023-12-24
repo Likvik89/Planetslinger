@@ -22,7 +22,7 @@ func spawn():
 	var spawn
 	
 	#selecting what to spawn
-	var spawnindex = randi_range(0,1)
+	var spawnindex = randi_range(0,0)
 	if spawnindex == 0:
 		spawn = planet.instantiate()
 	if spawnindex == 1:
@@ -31,16 +31,15 @@ func spawn():
 	#selecting "launch angle"
 	var spawnangle = randi_range(-45,45)
 	var direction = Vector2(cos(spawnangle), sin(spawnangle))
-	$Marker2D.position = Vector2(direction*150)
-	var spawnposition = $Marker2D.position
+	#$Marker2D.position = Vector2(direction*150)
+	#var spawnposition = $Marker2D.position
 	
 	spawn.scale = Vector2()
-	
+	spawn.apply_central_impulse(direction*150)
 	var tween = get_tree().create_tween()
-	var tween2 = get_tree().create_tween()
+	#var tween2 = get_tree().create_tween()
 	tween.tween_property(spawn, "scale", Vector2(1,1), 1)
-	tween2.tween_property(spawn, "position", spawnposition, 1)
-	spawn.apply_central_impulse(direction*200)
+	#tween2.tween_property(spawn, "position", spawnposition, 1)
 	
 	spawn.position = position
 	if spawn == enemy:
