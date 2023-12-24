@@ -22,6 +22,11 @@ buses/default_bus_layout="res://SFX/default_bus_layout.tres"
 
 Score="*res://Scripts/Score.gd"
 
+[display]
+
+mouse_cursor/custom_image="res://sprites/Playeranimations/Aim.png"
+mouse_cursor/custom_image_hotspot=Vector2(18, 18)
+
 [input]
 
 move_forward={
