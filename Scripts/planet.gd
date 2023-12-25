@@ -78,6 +78,9 @@ func _on_blackholemaker_body_entered(body):
 	if total_mass > self.mass * 2:
 		being_absorbed = true
 		var hol = bl.instantiate()
+		hol.scale = Vector2()
+		var tween = get_tree().create_tween()
+		tween.tween_property(hol, "scale", Vector2(1,1), 1)
 		hol.position = position
 		can_spawn_black_hole = true
 		await get_tree().process_frame
