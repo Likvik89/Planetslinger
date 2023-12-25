@@ -81,12 +81,17 @@ func _integrate_forces(delta):
 	look_at(get_global_mouse_position())
 	if Input.is_action_pressed("move_forward"):
 		var direction = Vector2(cos(rotation), sin(rotation)) 
-		apply_central_impulse(direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
+		if linear_velocity.length() < maxspeed:
+			apply_central_impulse(direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
+		else:
+			apply_central_force(direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
 	
 	if Input.is_action_pressed("move_back"):
 		var direction = Vector2(cos(rotation), sin(rotation))  # Calculate backward direction based on rotation
-		apply_central_impulse(-direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
-	
+		if linear_velocity.length() < maxspeed:
+			apply_central_impulse(-direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
+		else:
+			apply_central_force(-direction * THRUST_FORCE * thrust_force_multiplier * delta.step)
 	
 	if Input.is_action_just_pressed("move_forward"):
 		$exaust.play()
@@ -151,5 +156,3 @@ func _process(delta):
 	
 	if position.y < -3000:
 		position.y = 3000
-	
-	linear_velocity = linear_velocity.limit_length(maxspeed)
