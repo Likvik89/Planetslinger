@@ -12,7 +12,7 @@ func _ready():
 	
 	var random_number = randi_range(0.5,2)
 	changeSize(random_number)
-	mass * random_number * random_number * 500
+	mass = random_number * random_number * random_number* 4/3 * PI * mass
 	
 	var planetSprites = anim.sprite_frames.get_animation_names()
 	var randomIndex = randi() % planetSprites.size()
@@ -107,6 +107,8 @@ func get_absorbed(pos):
 
 func _on_mouse_entered():
 	grabable = true
+	print("entered")
+
 
 
 func _on_mouse_exited():

@@ -4527,7 +4527,8 @@ radius = 50.0
 radius = 62.0322
 
 [node name="Planet" type="RigidBody2D" groups=["bodies", "planets"]]
-mass = 800.0
+input_pickable = true
+mass = 400.0
 gravity_scale = 0.0
 script = ExtResource("1_75xrk")
 bl = ExtResource("2_mbujd")
