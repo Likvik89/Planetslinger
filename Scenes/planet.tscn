@@ -4552,5 +4552,7 @@ shape = SubResource("CircleShape2D_pib20")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blackholemaker"]
 shape = SubResource("CircleShape2D_8krb5")
 
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="blackholemaker" to="." method="_on_blackholemaker_body_entered"]

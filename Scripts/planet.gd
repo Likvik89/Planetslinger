@@ -4,6 +4,8 @@ extends RigidBody2D
 @export var health = 500000
 @onready var anim = $AnimatedSprite2D
 @export var bl : PackedScene
+var grabbed = false
+var grabable = false
 
 #Generating a random image, and size for the planet
 func _ready():
@@ -35,6 +37,12 @@ func _on_hurtbox_body_entered(body):
 
 #looping
 func _process(delta):
+	
+	if Input.is_action_pressed("Grab") and grabable:
+		grabbed = true
+	
+	while grabbed:
+		print("grabbed")
 	
 	if position.x > 3000:
 		position.x = -3000
@@ -95,3 +103,11 @@ func get_absorbed(pos):
 	tween.tween_property(self, "scale", Vector2(), 1)
 	tween2.tween_property(self, "position", pos, 1)
 	tween.tween_callback(queue_free)
+
+
+func _on_mouse_entered():
+	grabable = true
+
+
+func _on_mouse_exited():
+	grabable = false
