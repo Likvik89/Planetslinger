@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gy6v4c1b5mc5"
-path="res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"
+uid="uid://cxovmxbrtvpvx"
+path="res://.godot/imported/Purple.png-0d9006a5883c6e665572b6aa0a588ac3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Planets/Gasgiant.png"
-dest_files=["res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"]
+source_file="res://sprites/SpaceShips/Purple.png"
+dest_files=["res://.godot/imported/Purple.png-0d9006a5883c6e665572b6aa0a588ac3.ctex"]
 
 [params]
 

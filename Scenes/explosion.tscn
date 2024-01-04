@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfy027aivppay"]
+
+[ext_resource type="Texture2D" uid="uid://cowdbuf38v5sj" path="res://sprites/Playeranimations/THE_explosion.png" id="1_4gqr2"]
+[ext_resource type="Script" path="res://Scripts/explosion.gd" id="2_tskoy"]
+[ext_resource type="AudioStream" uid="uid://0bq7xwog833j" path="res://SFX/sci-fi_explosion.mp3" id="3_gng12"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kceka"]
+atlas = ExtResource("1_4gqr2")
+region = Rect2(0, 0, 200, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy1vu"]
+atlas = ExtResource("1_4gqr2")
+region = Rect2(0, 240, 200, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du2f3"]
+atlas = ExtResource("1_4gqr2")
+region = Rect2(0, 480, 200, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86pyv"]
+atlas = ExtResource("1_4gqr2")
+region = Rect2(0, 720, 200, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sakh"]
+atlas = ExtResource("1_4gqr2")
+region = Rect2(0, 960, 200, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcfoy"]
+atlas = ExtResource("1_4gqr2")
+region = Rect2(0, 1200, 200, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u3tx2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kceka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy1vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du2f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86pyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sakh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcfoy")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Explosion" type="AnimatedSprite2D"]
+position = Vector2(0.75, 0.900001)
+scale = Vector2(0.1325, 0.1325)
+sprite_frames = SubResource("SpriteFrames_u3tx2")
+frame = 6
+frame_progress = 1.0
+script = ExtResource("2_tskoy")
+
+[node name="boom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gng12")
+volume_db = -10.0
+bus = &"SFX"

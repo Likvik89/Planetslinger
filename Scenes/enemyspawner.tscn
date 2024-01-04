@@ -3,6 +3,15 @@
 [ext_resource type="Script" path="res://Scripts/Enemyspawner.gd" id="1_u0b3h"]
 [ext_resource type="PackedScene" uid="uid://cbw8g3l4vl6gq" path="res://Scenes/Enemy.tscn" id="2_0rtml"]
 
-[node name="Enemyspawner" type="Node2D"]
+[node name="Shipcontainer" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_u0b3h")
 enemy = ExtResource("2_0rtml")
+metadata/_edit_use_anchors_ = true

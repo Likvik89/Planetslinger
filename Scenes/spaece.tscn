@@ -1,41 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceidb1v0s1485"]
+[gd_scene load_steps=13 format=3 uid="uid://ceidb1v0s1485"]
 
 [ext_resource type="Script" path="res://Scripts/space.gd" id="1_8xrhg"]
+[ext_resource type="Texture2D" uid="uid://0jynubnk5guv" path="res://sprites/Backgrounds/Space Background.png" id="2_iutna"]
 [ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_1lsuq"]
-[ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="4_nh8i3"]
-[ext_resource type="PackedScene" uid="uid://dg1hws2hww7rm" path="res://Scenes/spaece_background.tscn" id="5_worp5"]
+[ext_resource type="AudioStream" uid="uid://bidpgye24owif" path="res://SFX/enchanted tiki 86.mp3" id="3_qkqeo"]
+[ext_resource type="PackedScene" uid="uid://c2l0lmddivget" path="res://Scenes/enemyspawner.tscn" id="5_pritn"]
+[ext_resource type="PackedScene" uid="uid://gbcf4kpqno52" path="res://Scenes/Gameplay_UI.tscn" id="6_piu2p"]
+[ext_resource type="PackedScene" uid="uid://bj7xlge1lg0jp" path="res://Scenes/Playership.tscn" id="6_soul1"]
+[ext_resource type="PackedScene" uid="uid://bt6jnkqbp4f0y" path="res://Scenes/gameover.tscn" id="7_fx4ws"]
+[ext_resource type="PackedScene" uid="uid://bni7xnd8ujfis" path="res://Scenes/wormhole.tscn" id="9_g4mt4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7n38p"]
+texture = ExtResource("2_iutna")
+texture_region_size = Vector2i(3000, 3000)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ild0a"]
+sources/2 = SubResource("TileSetAtlasSource_7n38p")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ld176"]
 size = Vector2(7003, 502)
 
 [node name="Spaæece" type="Node2D"]
 script = ExtResource("1_8xrhg")
+planet = ExtResource("3_1lsuq")
+wormhole = ExtResource("9_g4mt4")
+
+[node name="Background music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qkqeo")
+bus = &"Music"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.364706, 0.364706, 0.364706, 0.752941)
 
 [node name="Background(s)" type="Node2D" parent="."]
 
-[node name="Spaece background" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(-1500, -1500)
+[node name="TileMap" type="TileMap" parent="Background(s)"]
+tile_set = SubResource("TileSet_ild0a")
+format = 2
 
-[node name="Spaece background2" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(1500, -1500)
-
-[node name="Spaece background3" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(-1500, 1500)
-
-[node name="Spaece background4" parent="Background(s)" instance=ExtResource("5_worp5")]
-position = Vector2(1500, 1500)
-
-[node name="Bodies" type="Node2D" parent="."]
-position = Vector2(84, 64)
-
-[node name="Planet" parent="Bodies" instance=ExtResource("3_1lsuq")]
-position = Vector2(256, 195)
-
-[node name="Planet2" parent="Bodies" instance=ExtResource("3_1lsuq")]
-position = Vector2(654, 488)
-
-[node name="Playership" parent="Bodies" instance=ExtResource("4_nh8i3")]
-position = Vector2(82, 36)
+[node name="TextureRect" type="TextureRect" parent="Background(s)"]
+offset_left = -4603.0
+offset_top = -4415.0
+offset_right = 4897.0
+offset_bottom = 4474.0
+texture = ExtResource("2_iutna")
+stretch_mode = 1
 
 [node name="Edge of spaece" type="RigidBody2D" parent="."]
 position = Vector2(87, -7)
@@ -44,19 +55,47 @@ lock_rotation = true
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(0, -3244)
+position = Vector2(-456, -3600)
 shape = SubResource("RectangleShape2D_ld176")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(4, 3258)
+position = Vector2(-281, 3620)
 shape = SubResource("RectangleShape2D_ld176")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(3164, -9)
+position = Vector2(3292, 76)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ld176")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Edge of spaece"]
-position = Vector2(-3338, -2)
+position = Vector2(-4023, 17)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ld176")
+
+[node name="Celestial bodies" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Enemyspawner" parent="." instance=ExtResource("5_pritn")]
+
+[node name="Gameplay UI" parent="Enemyspawner" instance=ExtResource("6_piu2p")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="playership" parent="Enemyspawner" instance=ExtResource("6_soul1")]
+unique_name_in_owner = true
+position = Vector2(-141, 97)
+
+[node name="Camera2D" type="Camera2D" parent="Enemyspawner"]
+unique_name_in_owner = true
+visible = false
+enabled = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Enemyspawner/Camera2D"]
+
+[node name="Gameover" parent="Enemyspawner/Camera2D/CanvasLayer" instance=ExtResource("7_fx4ws")]
+unique_name_in_owner = true
+visible = false
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0

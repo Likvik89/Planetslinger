@@ -211,12 +211,12 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="playership" type="RigidBody2D" groups=["bodies", "player"]]
+[node name="playership" type="RigidBody2D" groups=["planets", "player"]]
 mass = 700.0
 gravity_scale = 0.0
 script = ExtResource("1_w6fab")
 
-[node name="exaust" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xxwt1")
 
 [node name="exhaust" type="AnimatedSprite2D" parent="."]
@@ -234,7 +234,7 @@ texture = ExtResource("3_e7ha8")
 shape = SubResource("CapsuleShape2D_aq7ew")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3, 3)
 limit_left = -100000
 limit_top = -100000
 limit_right = 100000

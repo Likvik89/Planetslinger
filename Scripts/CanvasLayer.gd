@@ -1,4 +1,4 @@
-extends "res://Scripts/Enemy spawner.gd"
+extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gy6v4c1b5mc5"
-path="res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"
+uid="uid://deplhiy7dbad2"
+path="res://.godot/imported/explosion_REAL.png-5760564946138e65e60fa60649350e16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Planets/Gasgiant.png"
-dest_files=["res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"]
+source_file="res://sprites/Playeranimations/explosion_REAL.png"
+dest_files=["res://.godot/imported/explosion_REAL.png-5760564946138e65e60fa60649350e16.ctex"]
 
 [params]
 

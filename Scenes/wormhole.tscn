@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bni7xnd8ujfis"]
+
+[ext_resource type="Texture2D" uid="uid://1olpu8qbhgkf" path="res://sprites/Planets/Wormhole_0_anim (1).png" id="1_bya2y"]
+[ext_resource type="Script" path="res://Scripts/wormhole.gd" id="1_j1hv8"]
+[ext_resource type="PackedScene" uid="uid://cbw8g3l4vl6gq" path="res://Scenes/Enemy.tscn" id="2_b7hva"]
+[ext_resource type="PackedScene" uid="uid://d166e7r2yvule" path="res://Scenes/planet.tscn" id="3_8hj80"]
+[ext_resource type="Texture2D" uid="uid://0jynubnk5guv" path="res://sprites/Backgrounds/Space Background.png" id="4_x3lra"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg46y"]
+radius = 107.0
+height = 340.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4tji"]
+radius = 1500.0
+
+[node name="Wormhole" type="Node2D"]
+script = ExtResource("1_j1hv8")
+enemy = ExtResource("2_b7hva")
+planet = ExtResource("3_8hj80")
+
+[node name="Reference" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_x3lra")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bya2y")
+
+[node name="teleporter" type="Area2D" parent="."]
+
+[node name="teleporter_area" type="CollisionShape2D" parent="teleporter"]
+visible = false
+position = Vector2(0, -39)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vg46y")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Seperator" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seperator"]
+shape = SubResource("CircleShape2D_g4tji")

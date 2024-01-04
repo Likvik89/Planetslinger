@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gy6v4c1b5mc5"
-path="res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"
+uid="uid://crej81m548f5x"
+path="res://.godot/imported/energy_barometer (2).png-e6d29c4463ec0b0b44ec94dd70dcdf63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Planets/Gasgiant.png"
-dest_files=["res://.godot/imported/Gasgiant.png-1e06d26b32e50a4614676992364f125a.ctex"]
+source_file="res://sprites/Playeranimations/energy_barometer (2).png"
+dest_files=["res://.godot/imported/energy_barometer (2).png-e6d29c4463ec0b0b44ec94dd70dcdf63.ctex"]
 
 [params]
 
