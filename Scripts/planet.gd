@@ -7,6 +7,7 @@ extends RigidBody2D
 var player
 var grabbed = false
 var grabable = false
+var grabbededed = false
 
 #Generating a random image, and size for the planet
 func _ready():
@@ -44,8 +45,8 @@ func _process(delta):
 		print("grab")
 	
 	if grabbed == true:
-		if self.global_position.distance_to(Score.playerposition)>500:
-			print("grabbed")
+		if self.global_position.distance_to(Score.playerposition)>100:
+			apply_central_force((Score.playerposition-self.global_position)*500)
 	
 	
 	if position.x > 3000:

@@ -234,7 +234,7 @@ texture = ExtResource("3_e7ha8")
 shape = SubResource("CapsuleShape2D_aq7ew")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(2, 2)
 limit_left = -100000
 limit_top = -100000
 limit_right = 100000
