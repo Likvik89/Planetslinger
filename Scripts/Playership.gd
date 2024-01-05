@@ -117,7 +117,7 @@ func _integrate_forces(delta):
 	if maxspeed < 900:
 		maxspeed = 900
 
-
+#Grapple length
 #Repulsing
 #"Looping"
 func _process(delta):

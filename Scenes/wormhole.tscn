@@ -11,7 +11,7 @@ radius = 107.0
 height = 340.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4tji"]
-radius = 1500.0
+radius = 1250.0
 
 [node name="Wormhole" type="Node2D"]
 script = ExtResource("1_j1hv8")
@@ -20,6 +20,7 @@ planet = ExtResource("3_8hj80")
 
 [node name="Reference" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(0, -1)
 texture = ExtResource("4_x3lra")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

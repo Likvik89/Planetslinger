@@ -42,9 +42,11 @@ func _process(delta):
 	
 	if Input.is_action_pressed("Grab") and grabable == true and Score.grab_targets < 1:
 		grabbed = true
+		Score.grab_targets += 1
 	
 	if Input.is_action_pressed("Detatch"):
 		grabbed = false
+		Score.grab_targets -= 1
 	
 	if grabbed == true:
 		if self.global_position.distance_to(Score.playerposition)>100:
@@ -104,6 +106,8 @@ func _on_blackholemaker_body_entered(body):
 
 #being absorbed by a black hole
 func get_absorbed(pos):
+	if grabbed == true:
+		Score.grab_targets -= 1
 	var tween = get_tree().create_tween()
 	var tween2 = get_tree().create_tween()
 	tween.tween_property(self, "scale", Vector2(), 1)
