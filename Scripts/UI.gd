@@ -17,7 +17,7 @@ func _process(delta):
 	else:
 		screensize = get_viewport().size
 		
-		var gf = floor((Score.grablenght/player.max_grablenght)*35)
+		var gf = floor((Score.grablenght/Score.max_grablenght)*35)
 		gravitymeter.set_frame(gf)
 		gravitymeter.position = Vector2(screensize.x-100, 100)
 		

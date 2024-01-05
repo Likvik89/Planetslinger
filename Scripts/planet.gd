@@ -50,18 +50,17 @@ func _process(delta):
 		if self.global_position.distance_to(Score.playerposition)>100:
 			apply_central_force((Score.playerposition-self.global_position)*500)
 	
+	if position.x > 2000:
+		position.x = -2000
 	
-	if position.x > 3000:
-		position.x = -3000
+	if position.x < -2000:
+		position.x = 2000
 	
-	if position.x < -3000:
-		position.x = 3000
+	if position.y > 2000:
+		position.y = -2000
 	
-	if position.y > 3000:
-		position.y = -3000
-	
-	if position.y < -3000:
-		position.y = 3000
+	if position.y < -2000:
+		position.y = 2000
 
 
 #Gravity

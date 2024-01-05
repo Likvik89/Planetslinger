@@ -62,17 +62,17 @@ func _process(delta):
 			get_tree().root.add_child(kapow)
 			queue_free()
 	
-	if position.x > 3000:
-		position.x = -3000
+	if position.x > 2000:
+		position.x = -2000
 	
-	if position.x < -3000:
-		position.x = 3000
+	if position.x < -2000:
+		position.x = 2000
 	
-	if position.y > 3000:
-		position.y = -3000
+	if position.y > 2000:
+		position.y = -2000
 	
-	if position.y < -3000:
-		position.y = 3000
+	if position.y < -2000:
+		position.y = 2000
 
 
 #Gravity/movement

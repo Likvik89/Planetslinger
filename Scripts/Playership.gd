@@ -153,14 +153,14 @@ func _process(delta):
 			repulseenergi = maxrepulseenergi
 	
 	#"Looping"
-	if position.x > 3000:
-		position.x = -3000
+	if position.x > 2000:
+		position.x = -2000
 	
-	if position.x < -3000:
-		position.x = 3000
+	if position.x < -2000:
+		position.x = 2000
 	
-	if position.y > 3000:
-		position.y = -3000
+	if position.y > 2000:
+		position.y = -2000
 	
-	if position.y < -3000:
-		position.y = 3000
+	if position.y < -2000:
+		position.y = 2000
