@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var health = 500000
 @onready var anim = $AnimatedSprite2D
 @export var bl : PackedScene
+var player
 var grabbed = false
 var grabable = false
 
@@ -38,10 +39,11 @@ func _on_hurtbox_body_entered(body):
 #looping
 func _process(delta):
 	
-	if Input.is_action_pressed("Grab") and grabable:
+	if Input.is_action_pressed("Grab") and grabable == true:
 		grabbed = true
+		print("grab")
 	
-	while grabbed:
+	if grabbed == true:
 		print("grabbed")
 	
 	if position.x > 3000:
@@ -83,7 +85,7 @@ func _on_blackholemaker_body_entered(body):
 				total_mass += thing.mass
 	
 	#making a black hole
-	if total_mass > self.mass * 2:
+	if total_mass > self.mass * 5:
 		being_absorbed = true
 		var hol = bl.instantiate()
 		hol.scale = Vector2()
@@ -107,7 +109,7 @@ func get_absorbed(pos):
 
 func _on_mouse_entered():
 	grabable = true
-	print("entered")
+	print("ent")
 
 
 

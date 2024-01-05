@@ -7,5 +7,5 @@ extends RigidBody2D
 func _on_absorb_body_entered(body):
 	if body.is_in_group("bodies"):
 		body.being_absorbed = true
-		self.mass += body.mass
+		self.mass += body.mass/2
 		body.get_absorbed(position)

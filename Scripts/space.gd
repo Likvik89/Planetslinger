@@ -15,6 +15,7 @@ func spawn():
 	var spawnangle = randi_range(0.0,360.0)
 	var direction = Vector2(cos(spawnangle), sin(spawnangle))
 	var spawnposition = Vector2(direction*spawndistance)
+	spawn.player = player
 	
 	spawn.position = spawnposition
 	%"Celestial bodies".add_child(spawn)
