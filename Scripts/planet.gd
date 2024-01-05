@@ -40,9 +40,11 @@ func _on_hurtbox_body_entered(body):
 #looping
 func _process(delta):
 	
-	if Input.is_action_pressed("Grab") and grabable == true:
+	if Input.is_action_pressed("Grab") and grabable == true and Score.grab_targets < 1:
 		grabbed = true
-		print("grab")
+	
+	if Input.is_action_pressed("Detatch"):
+		grabbed = false
 	
 	if grabbed == true:
 		if self.global_position.distance_to(Score.playerposition)>100:
