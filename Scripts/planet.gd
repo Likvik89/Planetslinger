@@ -44,7 +44,9 @@ func _process(delta):
 		print("grab")
 	
 	if grabbed == true:
-		print("grabbed")
+		if self.global_position.distance_to(Score.playerposition)>500:
+			print("grabbed")
+	
 	
 	if position.x > 3000:
 		position.x = -3000

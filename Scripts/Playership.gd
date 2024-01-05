@@ -25,6 +25,9 @@ var repulseenergirecovery = 1
 var health = 99999.0
 @export var maxhealth = 99999.0
 
+var start_grablenght = 500
+var max_grablenght = 1000
+var grablenght_change = 50
 
 @onready var anim = $"Repulsion field/Repulse"
 @onready var exhaustanim = $exhaust
@@ -54,17 +57,6 @@ func _on_area_2d_body_entered(body):
 #Gravity
 #Movement
 func _integrate_forces(delta):
-	
-	#Changing gravity
-	if Input.is_action_just_pressed("gravityup"):
-		self.mass += gravitychange
-	if Input.is_action_just_pressed("gravitydown"):
-		self.mass -= gravitychange
-	
-	if self.mass < startmass:
-		self.mass = startmass
-	if self.mass > maxmass:
-		self.mass = maxmass
 	
 	#Gravity calculation
 	var bodies = get_tree().get_nodes_in_group("bodies")
@@ -129,6 +121,17 @@ func _integrate_forces(delta):
 #Repulsing
 #"Looping"
 func _process(delta):
+	Score.playerposition = self.global_position
+	#Changing gravity
+	if Input.is_action_just_pressed("gravityup"):
+		Score.grablenght += grablenght_change
+	if Input.is_action_just_pressed("gravitydown"):
+		Score.grablenght -= grablenght_change
+	
+	if Score.grablenght < start_grablenght:
+		Score.grablenght = start_grablenght
+	if Score.grablenght > max_grablenght:
+		Score.grablenght = max_grablenght
 	
 	if health < 0 or health == 0:
 		
