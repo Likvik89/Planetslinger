@@ -2,7 +2,7 @@ extends Node2D
 
 @export var planet : PackedScene
 @export var wormhole : PackedScene
-var spawnamount = randi_range(10,20)
+var spawnamount = randi_range(7,15)
 
 @onready var gameoverscreen = $Enemyspawner/Camera2D/CanvasLayer/Gameover
 @onready var player = $Enemyspawner/playership
